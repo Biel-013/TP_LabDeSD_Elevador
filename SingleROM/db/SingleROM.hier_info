@@ -1,0 +1,12 @@
+|SingleROM
+SROM_DataOUT[0] <= <GND>
+SROM_DataOUT[1] <= <GND>
+SROM_DataOUT[2] <= <GND>
+SROM_DataOUT[3] <= <GND>
+SROM_DataOUT[4] <= <GND>
+SROM_DataOUT[5] <= <GND>
+SROM_DataOUT[6] <= <GND>
+SROM_DataOUT[7] <= <GND>
+SROM_DataOUT[8] <= <GND>
+
+

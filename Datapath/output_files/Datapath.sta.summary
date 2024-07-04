@@ -1,0 +1,29 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'DP_Clock'
+Slack : -135.981
+TNS   : -9361.467
+
+Type  : Slow Model Hold 'DP_Clock'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'DP_Clock'
+Slack : -1.380
+TNS   : -187.380
+
+Type  : Fast Model Setup 'DP_Clock'
+Slack : -61.630
+TNS   : -4190.210
+
+Type  : Fast Model Hold 'DP_Clock'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'DP_Clock'
+Slack : -1.380
+TNS   : -187.380
+
+------------------------------------------------------------

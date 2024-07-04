@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd
+source_file = 1, C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/tb_Emergencia.vhd
+source_file = 1, C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/db/Emergencia.cbx.xml
+source_file = 1, a:/program files/altera/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, a:/program files/altera/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, a:/program files/altera/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, a:/program files/altera/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = Emergencia
+instance = comp, \EMG_Start~I\, EMG_Start, Emergencia, 1
+instance = comp, \ESTADO~feeder\, ESTADO~feeder, Emergencia, 1
+instance = comp, \EMG_Reset~I\, EMG_Reset, Emergencia, 1
+instance = comp, \EMG_SigOUT~I\, EMG_SigOUT, Emergencia, 1

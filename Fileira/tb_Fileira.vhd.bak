@@ -1,0 +1,130 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity tb_Fileira is
+end tb_Fileira;
+
+architecture Behavioral of tb_Fileira is
+    -- Parâmetros genéricos
+    constant WIDTH : integer := 8;
+    constant DEPTH : integer := 4;
+
+    -- Sinais para conectar ao DUT (Device Under Test)
+    signal clk         : STD_LOGIC := '0';
+    signal reset       : STD_LOGIC := '0';
+    signal enqueue     : STD_LOGIC := '0';
+    signal dequeue     : STD_LOGIC := '0';
+    signal data_in     : STD_LOGIC_VECTOR(WIDTH-1 downto 0) := (others => '0');
+    signal data_out    : STD_LOGIC_VECTOR(WIDTH-1 downto 0);
+
+    -- Componente instanciado (DUT)
+    component Fileira
+        Generic (
+            WIDTH : integer := 8;
+            DEPTH : integer := 4
+        );
+        Port (
+            clk         : in  STD_LOGIC;
+            reset       : in  STD_LOGIC;
+            enqueue     : in  STD_LOGIC;
+            dequeue     : in  STD_LOGIC;
+            data_in     : in  STD_LOGIC_VECTOR(WIDTH-1 downto 0);
+            data_out    : out STD_LOGIC_VECTOR(WIDTH-1 downto 0)
+        );
+    end component;
+
+begin
+    -- Instância do DUT
+    uut: Fileira
+        Generic map (
+            WIDTH => WIDTH,
+            DEPTH => DEPTH
+        )
+        Port map (
+            clk => clk,
+            reset => reset,
+            enqueue => enqueue,
+            dequeue => dequeue,
+            data_in => data_in,
+            data_out => data_out
+        );
+
+    -- Geração de clock
+    clk_process :process
+    begin
+        while true loop
+            clk <= '0';
+            wait for 10 ns;
+            clk <= '1';
+            wait for 10 ns;
+        end loop;
+    end process;
+
+    -- Estímulos de teste
+    stimulus : process
+    begin
+        -- Reset inicial
+        reset <= '1';
+        wait for 20 ns;
+        reset <= '0';
+        wait for 20 ns;
+
+        -- Teste de enfileiramento
+        data_in <= "00000001";
+        enqueue <= '1';
+        wait for 20 ns;
+        enqueue <= '0';
+        wait for 20 ns;
+
+        data_in <= "00000010";
+        enqueue <= '1';
+        wait for 20 ns;
+        enqueue <= '0';
+        wait for 20 ns;
+
+        data_in <= "00000011";
+        enqueue <= '1';
+        wait for 20 ns;
+        enqueue <= '0';
+        wait for 20 ns;
+
+        data_in <= "00000100";
+        enqueue <= '1';
+        wait for 20 ns;
+        enqueue <= '0';
+        wait for 20 ns;
+
+        -- Tentativa de enfileirar um valor já presente (deve ser ignorado)
+        data_in <= "00000010";
+        enqueue <= '1';
+        wait for 20 ns;
+        enqueue <= '0';
+        wait for 20 ns;
+
+        -- Teste de desenfileiramento
+        dequeue <= '1';
+        wait for 20 ns;
+        dequeue <= '0';
+        wait for 20 ns;
+
+        dequeue <= '1';
+        wait for 20 ns;
+        dequeue <= '0';
+        wait for 20 ns;
+
+        dequeue <= '1';
+        wait for 20 ns;
+        dequeue <= '0';
+        wait for 20 ns;
+
+        dequeue <= '1';
+        wait for 20 ns;
+        dequeue <= '0';
+        wait for 20 ns;
+
+        -- Fim do teste
+        wait;
+    end process;
+end Behavioral;

@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Emergencia\simulation\modelsim
+Eemergencia
+Z1 w1718803401
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Emergencia\simulation\modelsim
+Z5 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd
+Z6 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd
+l0
+L4
+VULaVYUb4;Fj?QhGLUcjYz2
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1718803449.324000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd|
+Z10 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 i99^:>^c<@?[Nmn0ILL_90
+!i10b 1
+Aarch
+R2
+R3
+DEx4 work 10 emergencia 0 22 ULaVYUb4;Fj?QhGLUcjYz2
+l12
+L10
+VD6S49kSXih?AmR77fB1JT1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 U95JC;n8R2NLT?4JRWg[62
+!i10b 1
+Etb_emergencia
+Z13 w1718803302
+R2
+R3
+R4
+Z14 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/tb_Emergencia.vhd
+Z15 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/tb_Emergencia.vhd
+l0
+L4
+Vkc;ARE`c27:KeJDMl3HAf2
+!s100 8A`K@lR130VYbjJj=FhfW1
+R7
+31
+!i10b 1
+Z16 !s108 1718803449.469000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/tb_Emergencia.vhd|
+Z18 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/tb_Emergencia.vhd|
+R11
+R12
+Abehavior
+R2
+R3
+DEx4 work 13 tb_emergencia 0 22 kc;ARE`c27:KeJDMl3HAf2
+l26
+L7
+V_fKRY^]N<<D@hj?NS>bhd2
+!s100 8`1oG^V460fI34BcdTAdY3
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12

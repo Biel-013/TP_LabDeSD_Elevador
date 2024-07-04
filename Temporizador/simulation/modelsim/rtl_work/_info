@@ -1,0 +1,83 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Temporizador\simulation\modelsim
+Etb_temporizador
+Z1 w1718841325
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Temporizador\simulation\modelsim
+Z7 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/tb_Temporizador.vhd
+Z8 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/tb_Temporizador.vhd
+l0
+L5
+V2OmPTj;;[6F?9;8MMj1ej2
+!s100 2VdhhFnjQEoSlN6iBMJ0:3
+Z9 OV;C;10.1d;51
+31
+!i10b 1
+Z10 !s108 1720045345.099000
+Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/tb_Temporizador.vhd|
+Z12 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/tb_Temporizador.vhd|
+Z13 o-93 -work work -O0
+Z14 tExplicit 1
+Aarch
+R2
+R3
+R4
+R5
+DEx4 work 15 tb_temporizador 0 22 2OmPTj;;[6F?9;8MMj1ej2
+l26
+L8
+V?Y^6aXXb75NV61TQb1I4k2
+!s100 Sf[_ni>gP=LWN8LXShLEj2
+R9
+31
+!i10b 1
+R10
+R11
+R12
+R13
+R14
+Etemporizador
+Z15 w1720026113
+R2
+R3
+R4
+R5
+R6
+Z16 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd
+Z17 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd
+l0
+L5
+V;j[dJ]gRX_@@>XeI9a^7J0
+R9
+31
+Z18 !s108 1720045344.950000
+Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd|
+Z20 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd|
+R13
+R14
+!s100 <7V^49lCo;_l6e:eQX6Pg3
+!i10b 1
+Aarch
+R2
+R3
+R4
+R5
+DEx4 work 12 temporizador 0 22 ;j[dJ]gRX_@@>XeI9a^7J0
+l21
+L18
+V>hVXU0Tz5_RgaTO?VH5R33
+R9
+31
+R18
+R19
+R20
+R13
+R14
+!s100 J^]a>NkIRLHDX`6Q2inmb1
+!i10b 1

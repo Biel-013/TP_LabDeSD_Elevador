@@ -1,0 +1,112 @@
+-- pseudo_mux - A Finite State Machine that mimics the behavior of mux
+-- Copyright (C) 2018  Digital Systems Group - UFMG
+-- 
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 3 of the License, or
+-- (at your option) any later version.
+-- 
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+-- 
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, see <https://www.gnu.org/licenses/>.
+--
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity Controladora is
+    port (
+        CLOCK   	 : in    std_logic; -- clock input
+        RESET    	 : in    std_logic; -- reset input
+		  MAIOR   	 : in    std_logic; -- Entrada que indica que A é maior que B
+        MENOR   	 : in    std_logic; -- Entrada que indica que A é menor que B
+		  LOAD_E  	 : out    std_logic; -- Sinal de carga do Reg_E
+        RESET_MA   : out    std_logic; -- Sinal de reset do Reg_MA
+        DESCENDO   : out    std_logic; -- Sinal do LED de subida
+		  SUBINDO    : out    std_logic; -- Sinal do LED de descida
+		  ATUALIZE   : out    std_logic -- Sinal de atualização do REG_SD
+    );
+end Controladora;
+
+architecture arch of Controladora is
+    -- Declaração dos estados
+    type state_type is (S0, S1, S2, S3, S4);
+    signal STATE, Next_STATE : state_type := S0;
+
+begin
+    -- Processo de transição de estados
+    process (CLOCK, RESET)
+    begin
+        if RESET = '1' then
+				STATE <= S0; -- Estado inicial após reset
+		  elsif rising_edge(CLOCK) then
+				STATE <= Next_STATE;
+		  end if;
+    end process;
+
+    -- Processo combinacional da saídas e estados
+    process (MAIOR, MENOR, STATE)
+    begin
+	  SUBINDO <= '0';
+		DESCENDO <= '0';
+		case STATE is
+			when S0 =>
+				  -- Inicializa os sinais de saída
+				  LOAD_E <= '1';
+				  RESET_MA <= '1';
+				  SUBINDO <= '1';
+				  DESCENDO <= '1';
+				  ATUALIZE <= '1';
+				  -- Passa para o primeiro estado da FSM
+				  Next_STATE <= S1;
+			when S1 =>
+				  -- Atualiza os valores das saídas
+				  LOAD_E <= '1';
+				  RESET_MA <= '0';
+				  ATUALIZE <= '0';
+				 
+				  -- Atualiza o proximo estado dependendo dos sinais Maior e Menor
+				  if MAIOR = '1' then
+						Next_STATE <= S2; -- Próximo estado após S ser acionado
+				  elsif (MAIOR = '0' and MENOR =  '1') then
+						Next_STATE <= S3;
+				  elsif (MAIOR = '0' and MENOR =  '0') then
+						Next_STATE <= S4;
+				  else
+						Next_STATE <= S1;
+				  end if;
+			when S2 =>
+				  -- Atualiza os valores das saídas
+				  LOAD_E <= '1';
+				  SUBINDO <= '1';
+				  DESCENDO <= '0';
+				  ATUALIZE <= '1';
+				  RESET_MA <= '0';
+				  -- Passa para o primeiro estado da FSM
+				  Next_STATE <= S1;
+			when S3 =>
+				  -- Atualiza os valores das saídas
+				  LOAD_E <= '1';
+				  RESET_MA <= '0';
+				  SUBINDO <= '0';
+				  DESCENDO <= '1';
+				  ATUALIZE <= '1';
+				  -- Passa para o primeiro estado da FSM
+				  Next_STATE <= S1;
+			when others => -- S4 =>
+				  -- Atualiza os valores das saídas
+				  LOAD_E <= '1';
+				  RESET_MA <= '0';
+				  SUBINDO <= '0';
+				  DESCENDO <= '0';
+				  ATUALIZE <= '1';
+				  -- Passa para o primeiro estado da FSM
+				  Next_STATE <= S1;
+		end case;
+	 end process;
+    
+end arch;

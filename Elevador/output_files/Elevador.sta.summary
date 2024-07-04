@@ -1,0 +1,117 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'DivClock:INST_DivClock|clk_div'
+Slack : -133.508
+TNS   : -9189.611
+
+Type  : Slow Model Setup 'ELV_Emergencia'
+Slack : -4.617
+TNS   : -9.205
+
+Type  : Slow Model Setup 'Controladora:INST_Controladora|STATE.S8'
+Slack : -3.627
+TNS   : -3.627
+
+Type  : Slow Model Setup 'ELV_Clock'
+Slack : -2.787
+TNS   : -58.924
+
+Type  : Slow Model Hold 'ELV_Emergencia'
+Slack : -5.262
+TNS   : -19.616
+
+Type  : Slow Model Hold 'Controladora:INST_Controladora|STATE.S8'
+Slack : -4.383
+TNS   : -9.962
+
+Type  : Slow Model Hold 'DivClock:INST_DivClock|clk_div'
+Slack : -4.126
+TNS   : -5.780
+
+Type  : Slow Model Hold 'ELV_Clock'
+Slack : -2.543
+TNS   : -2.543
+
+Type  : Slow Model Recovery 'DivClock:INST_DivClock|clk_div'
+Slack : -0.969
+TNS   : -14.133
+
+Type  : Slow Model Removal 'DivClock:INST_DivClock|clk_div'
+Slack : 1.346
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'ELV_Clock'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Slow Model Minimum Pulse Width 'ELV_Emergencia'
+Slack : -1.222
+TNS   : -2.222
+
+Type  : Slow Model Minimum Pulse Width 'DivClock:INST_DivClock|clk_div'
+Slack : -0.500
+TNS   : -180.000
+
+Type  : Slow Model Minimum Pulse Width 'Controladora:INST_Controladora|STATE.S8'
+Slack : -0.500
+TNS   : -1.000
+
+Type  : Fast Model Setup 'DivClock:INST_DivClock|clk_div'
+Slack : -60.458
+TNS   : -4119.833
+
+Type  : Fast Model Setup 'Controladora:INST_Controladora|STATE.S8'
+Slack : -1.371
+TNS   : -1.371
+
+Type  : Fast Model Setup 'ELV_Emergencia'
+Slack : -1.342
+TNS   : -2.682
+
+Type  : Fast Model Setup 'ELV_Clock'
+Slack : -0.829
+TNS   : -11.969
+
+Type  : Fast Model Hold 'ELV_Emergencia'
+Slack : -2.555
+TNS   : -9.850
+
+Type  : Fast Model Hold 'DivClock:INST_DivClock|clk_div'
+Slack : -2.337
+TNS   : -5.650
+
+Type  : Fast Model Hold 'Controladora:INST_Controladora|STATE.S8'
+Slack : -2.151
+TNS   : -5.239
+
+Type  : Fast Model Hold 'ELV_Clock'
+Slack : -1.586
+TNS   : -1.586
+
+Type  : Fast Model Recovery 'DivClock:INST_DivClock|clk_div'
+Slack : 0.053
+TNS   : 0.000
+
+Type  : Fast Model Removal 'DivClock:INST_DivClock|clk_div'
+Slack : 0.657
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'ELV_Clock'
+Slack : -1.380
+TNS   : -34.380
+
+Type  : Fast Model Minimum Pulse Width 'ELV_Emergencia'
+Slack : -1.222
+TNS   : -2.222
+
+Type  : Fast Model Minimum Pulse Width 'DivClock:INST_DivClock|clk_div'
+Slack : -0.500
+TNS   : -180.000
+
+Type  : Fast Model Minimum Pulse Width 'Controladora:INST_Controladora|STATE.S8'
+Slack : -0.500
+TNS   : -1.000
+
+------------------------------------------------------------

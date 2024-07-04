@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Controladora\simulation\modelsim
+Econtroladora
+Z1 w1719338497
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Controladora\simulation\modelsim
+Z6 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd
+Z7 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd
+l0
+L5
+VZiAOIX]lT[]>i7lSNeUTR3
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1719338902.899000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd|
+Z11 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 Cj0_W@A^]aB@SYTM52`5N0
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 12 controladora 0 22 ZiAOIX]lT[]>i7lSNeUTR3
+l41
+L36
+V[_<d_C1bU6Qk[YM36kXaA2
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 VIKE<<mIbecl1InW@YIk41
+!i10b 1
+Etb_controladora
+Z14 w1719338578
+R2
+R3
+R4
+R5
+Z15 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/tb_Controladora.vhd
+Z16 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/tb_Controladora.vhd
+l0
+L5
+VcRHieT>iMjD6`P4i8ze@l2
+!s100 IBnTG?XHO=G8jbRZ1WeU62
+R8
+31
+!i10b 1
+Z17 !s108 1719338902.975000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/tb_Controladora.vhd|
+Z19 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/tb_Controladora.vhd|
+R12
+R13
+Atest
+R2
+R3
+R4
+DEx4 work 15 tb_controladora 0 22 cRHieT>iMjD6`P4i8ze@l2
+l73
+L8
+Vb61A>Sd;z>>e;gSRBbSfB2
+!s100 8dDEOiNVZTZFKlZI_M8R90
+R8
+31
+!i10b 1
+R17
+R18
+R19
+R12
+R13

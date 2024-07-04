@@ -1,0 +1,67 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity Fileira is
+    Generic (
+        WIDTH : integer := 8;   -- Largura dos dados
+        DEPTH : integer := 4    -- Profundidade da fila
+    );
+    Port (
+        clk         : in  STD_LOGIC;
+        reset       : in  STD_LOGIC;
+        enqueue     : in  STD_LOGIC;               -- Sinal para enfileirar
+        dequeue     : in  STD_LOGIC;               -- Sinal para desenfileirar
+        data_in     : in  STD_LOGIC_VECTOR(WIDTH-1 downto 0); -- Dado de entrada
+        data_out    : out STD_LOGIC_VECTOR(WIDTH-1 downto 0)  -- Dado de saída
+    );
+end Fileira;
+
+architecture Behavioral of Fileira is
+    type queue_type is array (0 to DEPTH-1) of STD_LOGIC_VECTOR(WIDTH-1 downto 0);
+    signal queue : queue_type := (others => (others => '0'));
+    signal head  : integer := 0;
+    signal tail  : integer := 0;
+    signal count : integer := 0;
+
+    -- Função para verificar se o dado está na fila
+    function is_in_queue(data: STD_LOGIC_VECTOR(WIDTH-1 downto 0)) return boolean is
+    begin
+        for i in 0 to DEPTH-1 loop
+            if queue(i) = data then
+                return true;
+            end if;
+        end loop;
+        return false;
+    end function;
+
+begin
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            queue <= (others => (others => '0'));
+            head <= 0;
+            tail <= 0;
+            count <= 0;
+        elsif rising_edge(clk) then
+            if enqueue = '1' and data_in /= "00000000" and not is_in_queue(data_in) then
+                if count < DEPTH then
+                    queue(tail) <= data_in;
+                    tail <= (tail + 1) mod DEPTH;
+                    count <= count + 1;
+                end if;
+            end if;
+
+            if dequeue = '1' then
+                if count > 0 then
+                    head <= (head + 1) mod DEPTH;
+                    count <= count - 1;
+                end if;
+            end if;
+        end if;
+    end process;
+
+    data_out <= queue(head);
+    
+end Behavioral;

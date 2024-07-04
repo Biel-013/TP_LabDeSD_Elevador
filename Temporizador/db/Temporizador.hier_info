@@ -1,0 +1,31 @@
+|Temporizador
+TEMP_Clock => TEMP_SigOUT~reg0.CLK
+TEMP_Clock => Contador[0].CLK
+TEMP_Clock => Contador[1].CLK
+TEMP_Clock => Contador[2].CLK
+TEMP_Clock => Contador[3].CLK
+TEMP_Clock => Contador[4].CLK
+TEMP_Clock => Contador[5].CLK
+TEMP_Clock => Contador[6].CLK
+TEMP_Clock => Contador[7].CLK
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => Contador.OUTPUTSELECT
+TEMP_Start => TEMP_SigOUT~reg0.ENA
+TEMP_Reset => TEMP_SigOUT~reg0.ACLR
+TEMP_Reset => Contador[0].ACLR
+TEMP_Reset => Contador[1].ACLR
+TEMP_Reset => Contador[2].ACLR
+TEMP_Reset => Contador[3].ACLR
+TEMP_Reset => Contador[4].ACLR
+TEMP_Reset => Contador[5].ACLR
+TEMP_Reset => Contador[6].ACLR
+TEMP_Reset => Contador[7].ACLR
+TEMP_SigOUT <= TEMP_SigOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

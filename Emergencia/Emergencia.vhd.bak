@@ -1,0 +1,25 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Emergencia is
+    Port ( start : in  STD_LOGIC;
+           reset : in  STD_LOGIC;
+           output : out  STD_LOGIC);
+end Emergencia;
+
+architecture Behavioral of Emergencia is
+    signal estado : STD_LOGIC := '0';  -- estado interno para controlar a saída
+begin
+    process(start, reset)
+    begin
+        if reset = '1' then
+            estado <= '0';  -- reset assíncrono
+        elsif start = '1' then
+            estado <= '1';  -- quando start vai para HIGH, aciona a saída
+        elsif start = '0' then
+            estado <= '0';  -- quando start vai para LOW, desativa a saída
+        end if;
+    end process;
+
+    output <= estado;  -- a saída reflete o estado interno
+end Behavioral;

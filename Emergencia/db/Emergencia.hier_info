@@ -1,0 +1,6 @@
+|Emergencia
+EMG_Start => ESTADO.CLK
+EMG_Reset => ESTADO.ACLR
+EMG_SigOUT <= ESTADO.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,45 @@
+|BCD_7sWd
+BCD_Entrada[0] => Mod0.IN13
+BCD_Entrada[0] => Div0.IN10
+BCD_Entrada[0] => Equal0.IN6
+BCD_Entrada[1] => Mod0.IN12
+BCD_Entrada[1] => Div0.IN9
+BCD_Entrada[1] => Equal0.IN5
+BCD_Entrada[2] => Mod0.IN11
+BCD_Entrada[2] => Div0.IN8
+BCD_Entrada[2] => Equal0.IN4
+BCD_Entrada[3] => Mod0.IN10
+BCD_Entrada[3] => Div0.IN7
+BCD_Entrada[3] => Equal0.IN3
+BCD_Entrada[4] => Mod0.IN9
+BCD_Entrada[4] => Div0.IN6
+BCD_Entrada[4] => Equal0.IN2
+BCD_Entrada[5] => Mod0.IN8
+BCD_Entrada[5] => Div0.IN5
+BCD_Entrada[5] => Equal0.IN1
+BCD_Entrada[6] => Mod0.IN7
+BCD_Entrada[6] => Div0.IN4
+BCD_Entrada[6] => Equal0.IN0
+BCD_Saida[0] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[1] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[2] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[3] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[4] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[5] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[6] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[7] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[8] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[9] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[10] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[11] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[12] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[13] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[14] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[15] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[16] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[17] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[18] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[19] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+BCD_Saida[20] <= parse_saida.DB_MAX_OUTPUT_PORT_TYPE
+
+

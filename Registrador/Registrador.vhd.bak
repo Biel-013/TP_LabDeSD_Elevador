@@ -1,0 +1,32 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity registrador is
+    generic (n : integer := 8); -- largura do registrador (número de bits)
+    port (
+        clk   : in  std_logic;   -- clock
+        rst   : in  std_logic;   -- reset
+        en    : in  std_logic;   -- enable
+        din   : in  std_logic_vector(n-1 downto 0); -- dado de entrada
+        dout  : out std_logic_vector(n-1 downto 0)  -- dado de saída
+    );
+end registrador;
+
+architecture behavioral of registrador is
+    signal reg : std_logic_vector(n-1 downto 0);
+begin
+    process (clk, rst)
+    begin
+        if rst = '1' then
+            reg <= (others => '0');
+        elsif rising_edge(clk) then
+            if en = '1' then
+                reg <= din;
+            end if;
+        end if;
+    end process;
+    
+    dout <= reg;
+end behavioral;

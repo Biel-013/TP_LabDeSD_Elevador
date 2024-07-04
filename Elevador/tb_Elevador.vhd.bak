@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use IEEE.NUMERIC_STD.all;
+
+entity tb_Elevador is
+end tb_Elevador;
+
+architecture arch of tb_Elevador is
+component port (
+        ELV_Clock         : in std_logic;
+        ELV_Reset         : in std_logic;
+        ELV_Reset_Emerg   : in std_logic;
+        ELV_Emergencia    : in std_logic;
+        ELV_Obstrucao     : in std_logic;
+        ELV_PortaAberta   : in std_logic;
+        ELV_PortaFechada  : in std_logic;
+        ELV_TecladoAndar  : in std_logic_vector(6 downto 0);
+        ELV_SensorAndar   : in std_logic_vector(6 downto 0);
+        ELV_SensorPeso    : in std_logic_vector(8 downto 0);  -- Corrigido tamanho do vetor
+        ELV_Emerg_SigOUT  : out std_logic;
+        ELV_Motor_Porta   : out std_logic;
+        ELV_Motor_Subir   : out std_logic;
+        ELV_Motor_Descer  : out std_logic;
+        ELV_Sobrepeso     : out std_logic;
+        ELV_DisplayPeso   : out std_logic_vector(20 downto 0);
+        ELV_DisplayInterno: out std_logic_vector(13 downto 0);
+        ELV_DisplayExterno: out std_logic_vector(13 downto 0)
+    );
+end arch;

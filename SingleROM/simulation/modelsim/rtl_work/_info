@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\SingleROM\simulation\modelsim
+Esinglerom
+Z1 w1718805304
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\SingleROM\simulation\modelsim
+Z6 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd
+Z7 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd
+l0
+L5
+V^X1^6nXch4<T56@`BTPSD3
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1718805463.342000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd|
+Z11 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 7W=gCa:8KT1TeK0TTT76Y0
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 9 singlerom 0 22 ^X1^6nXch4<T56@`BTPSD3
+l16
+L15
+VBlQF?E2dbH60aYN@R_e`21
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 Io0V_jY852M?`1JTiO8Fl1
+!i10b 1
+Etb_singlerom
+Z14 w1718805365
+R2
+R3
+R4
+R5
+Z15 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd
+Z16 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd
+l0
+L5
+VQjgc1NO2azPGHCRgR>_0a3
+!s100 9W>X3m5M5ohKc3ll75if13
+R8
+31
+!i10b 1
+Z17 !s108 1718805463.494000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd|
+Z19 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd|
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 12 tb_singlerom 0 22 Qjgc1NO2azPGHCRgR>_0a3
+l24
+L8
+VBR?Y7bFl@[zYSQ770UIoh1
+!s100 GARU_AzET9GMhANAc5[RT1
+R8
+31
+!i10b 1
+R17
+R18
+R19
+R12
+R13

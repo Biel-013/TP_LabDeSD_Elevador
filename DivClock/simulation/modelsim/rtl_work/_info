@@ -1,0 +1,75 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\DivClock\simulation\modelsim
+Edivclock
+Z1 w1719411906
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\DivClock\simulation\modelsim
+Z5 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd
+Z6 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd
+l0
+L4
+VEO`VMiOaCE64aVGI^IafD3
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1719412066.535000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd|
+Z10 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 hz5oKXz9a7EDeGB:zC0HI3
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 8 divclock 0 22 EO`VMiOaCE64aVGI^IafD3
+l17
+L13
+V;:chQEhMik>l7QM3gBDm70
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 J7QU]dE?`C[ClSde:l4Pm0
+!i10b 1
+Etb_divclock
+Z13 w1719411914
+R2
+R3
+R4
+Z14 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/tb_DivClock.vhd
+Z15 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/tb_DivClock.vhd
+l0
+L4
+V3SV30Z<8JEPGmC80XFLb51
+!s100 l4Wo8:]fFnE^<^:7TTQOI2
+R7
+31
+!i10b 1
+Z16 !s108 1719412066.706000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/tb_DivClock.vhd|
+Z18 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/tb_DivClock.vhd|
+R11
+R12
+Abehavioral
+R2
+R3
+DEx4 work 11 tb_divclock 0 22 3SV30Z<8JEPGmC80XFLb51
+l24
+L7
+V52:e6Lijk8^<NlTeg<2<;3
+!s100 ;iUGmI6gQef>a9zY__0jK2
+R7
+31
+!i10b 1
+R16
+R17
+R18
+R11
+R12

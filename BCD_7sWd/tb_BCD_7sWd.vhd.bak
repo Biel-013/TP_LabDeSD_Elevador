@@ -1,0 +1,28 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity Testbench is
+end Testbench;
+
+architecture Behavioral of Testbench is
+    signal entrada : std_logic_vector(7 downto 0);
+    signal saida : std_logic_vector(6 downto 0);  -- Ajuste o tamanho conforme o necessário
+
+    constant W : integer := 1;  -- Ajuste conforme necessário
+begin
+    uut: entity work.Bcd_7seg
+        generic map (W => W)
+        port map (entrada => entrada, saida => saida);
+
+    process
+    begin
+        -- Teste 1: Número 5, verificar a saída
+        entrada <= "00000101";  -- 5 em binário
+        wait for 10 ns;
+        assert (saida = "0010010") report "Erro no teste 1" severity error;  -- Esperado: "0010010" (5)
+
+        -- Adicione mais casos de teste conforme necessário
+        wait;
+    end process;
+end Behavioral;

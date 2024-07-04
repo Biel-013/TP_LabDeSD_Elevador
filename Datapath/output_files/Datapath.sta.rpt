@@ -1,0 +1,1582 @@
+TimeQuest Timing Analyzer report for Datapath
+Wed Jun 26 10:30:03 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'DP_Clock'
+ 12. Slow Model Hold: 'DP_Clock'
+ 13. Slow Model Minimum Pulse Width: 'DP_Clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'DP_Clock'
+ 24. Fast Model Hold: 'DP_Clock'
+ 25. Fast Model Minimum Pulse Width: 'DP_Clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Datapath                                                          ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; DP_Clock   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { DP_Clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++-----------------------------------------------+
+; Slow Model Fmax Summary                       ;
++---------+-----------------+------------+------+
+; Fmax    ; Restricted Fmax ; Clock Name ; Note ;
++---------+-----------------+------------+------+
+; 7.3 MHz ; 7.3 MHz         ; DP_Clock   ;      ;
++---------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------+
+; Slow Model Setup Summary            ;
++----------+----------+---------------+
+; Clock    ; Slack    ; End Point TNS ;
++----------+----------+---------------+
+; DP_Clock ; -135.981 ; -9361.467     ;
++----------+----------+---------------+
+
+
++----------------------------------+
+; Slow Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; DP_Clock ; 0.391 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; DP_Clock ; -1.380 ; -187.380           ;
++----------+--------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'DP_Clock'                                                                                                                             ;
++----------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack    ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++----------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; -135.981 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 137.011    ;
+; -135.910 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.940    ;
+; -135.839 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.869    ;
+; -135.768 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.798    ;
+; -135.713 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.742    ;
+; -135.697 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.727    ;
+; -135.642 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.671    ;
+; -135.626 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.656    ;
+; -135.593 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.622    ;
+; -135.571 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.600    ;
+; -135.555 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.585    ;
+; -135.526 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.555    ;
+; -135.522 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.551    ;
+; -135.500 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.529    ;
+; -135.492 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.521    ;
+; -135.484 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.514    ;
+; -135.455 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.484    ;
+; -135.451 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.480    ;
+; -135.429 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.458    ;
+; -135.421 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.450    ;
+; -135.421 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.450    ;
+; -135.384 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.413    ;
+; -135.380 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.409    ;
+; -135.358 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.387    ;
+; -135.350 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.379    ;
+; -135.350 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.379    ;
+; -135.343 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.372    ;
+; -135.325 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.355    ;
+; -135.313 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.342    ;
+; -135.309 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.338    ;
+; -135.287 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.316    ;
+; -135.279 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.308    ;
+; -135.279 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.308    ;
+; -135.272 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.301    ;
+; -135.254 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[22] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.284    ;
+; -135.242 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.271    ;
+; -135.238 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.267    ;
+; -135.234 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.263    ;
+; -135.216 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.245    ;
+; -135.208 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.237    ;
+; -135.208 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.237    ;
+; -135.201 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.230    ;
+; -135.183 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[21] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 136.213    ;
+; -135.171 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.200    ;
+; -135.167 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.196    ;
+; -135.163 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.192    ;
+; -135.137 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.166    ;
+; -135.137 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.166    ;
+; -135.130 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.159    ;
+; -135.100 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.129    ;
+; -135.096 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.125    ;
+; -135.092 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.121    ;
+; -135.071 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.100    ;
+; -135.066 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.095    ;
+; -135.066 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.095    ;
+; -135.059 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.088    ;
+; -135.057 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.086    ;
+; -135.029 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.058    ;
+; -135.021 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.050    ;
+; -135.016 ; Fileira:INST_Fila_Andar|inicio[9]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.045    ;
+; -135.003 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 136.037    ;
+; -135.000 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.029    ;
+; -134.995 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.024    ;
+; -134.995 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.024    ;
+; -134.988 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.017    ;
+; -134.986 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[22] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 136.015    ;
+; -134.965 ; Fileira:INST_Fila_Andar|inicio[10] ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.994    ;
+; -134.951 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 135.985    ;
+; -134.950 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.979    ;
+; -134.945 ; Fileira:INST_Fila_Andar|inicio[9]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.974    ;
+; -134.937 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.966    ;
+; -134.932 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 135.966    ;
+; -134.929 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.958    ;
+; -134.924 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.953    ;
+; -134.917 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.946    ;
+; -134.915 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[21] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.944    ;
+; -134.894 ; Fileira:INST_Fila_Andar|inicio[10] ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.923    ;
+; -134.880 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 135.914    ;
+; -134.879 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.908    ;
+; -134.874 ; Fileira:INST_Fila_Andar|inicio[9]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.903    ;
+; -134.870 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.899    ;
+; -134.866 ; Fileira:INST_Fila_Andar|inicio[11] ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.895    ;
+; -134.866 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[22] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.895    ;
+; -134.861 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[29]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 135.895    ;
+; -134.858 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.887    ;
+; -134.846 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.875    ;
+; -134.836 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.865    ;
+; -134.828 ; Fileira:INST_Fila_Andar|fim[2]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 135.862    ;
+; -134.823 ; Fileira:INST_Fila_Andar|inicio[10] ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.852    ;
+; -134.809 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[29]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 135.843    ;
+; -134.808 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.837    ;
+; -134.803 ; Fileira:INST_Fila_Andar|inicio[9]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.832    ;
+; -134.802 ; Fileira:INST_Fila_Andar|inicio[12] ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.831    ;
+; -134.799 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[22] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.828    ;
+; -134.797 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[20] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 135.827    ;
+; -134.795 ; Fileira:INST_Fila_Andar|inicio[11] ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.824    ;
+; -134.795 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[21] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.824    ;
+; -134.790 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[28]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 135.824    ;
+; -134.787 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.816    ;
+; -134.765 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.007     ; 135.794    ;
++----------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'DP_Clock'                                                                                                                                           ;
++-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; Fileira:INST_Fila_Andar|fim[0]             ; Fileira:INST_Fila_Andar|fim[0]             ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Fileira:INST_Fila_Andar|inicio[0]          ; Fileira:INST_Fila_Andar|inicio[0]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|Contador[0] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|Contador[1] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|Contador[2] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; Temporizador:INST_Temporizador|TEMP_SigOUT ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.657      ;
+; 0.526 ; Fileira:INST_Fila_Andar|count[31]          ; Fileira:INST_Fila_Andar|count[31]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.792      ;
+; 0.537 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|Contador[2] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.803      ;
+; 0.540 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|Contador[0] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.806      ;
+; 0.541 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|Contador[1] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.807      ;
+; 0.791 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[25]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.057      ;
+; 0.795 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[0]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.061      ;
+; 0.797 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[9]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.063      ;
+; 0.797 ; Fileira:INST_Fila_Andar|count[29]          ; Fileira:INST_Fila_Andar|count[29]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.063      ;
+; 0.798 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[11]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.064      ;
+; 0.798 ; Fileira:INST_Fila_Andar|count[13]          ; Fileira:INST_Fila_Andar|count[13]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.064      ;
+; 0.798 ; Fileira:INST_Fila_Andar|count[15]          ; Fileira:INST_Fila_Andar|count[15]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.064      ;
+; 0.798 ; Fileira:INST_Fila_Andar|count[23]          ; Fileira:INST_Fila_Andar|count[23]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.064      ;
+; 0.802 ; Fileira:INST_Fila_Andar|count[7]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.802 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[20]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.068      ;
+; 0.806 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[2]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[4]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.072      ;
+; 0.827 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[26]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.093      ;
+; 0.828 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[19]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.094      ;
+; 0.832 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[8]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.098      ;
+; 0.835 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[12]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.101      ;
+; 0.838 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[3]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; Fileira:INST_Fila_Andar|count[5]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; Fileira:INST_Fila_Andar|count[6]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.105      ;
+; 0.948 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.214      ;
+; 0.967 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|Contador[0] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.233      ;
+; 0.978 ; Fileira:INST_Fila_Andar|count[28]          ; Fileira:INST_Fila_Andar|count[28]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.244      ;
+; 0.979 ; Fileira:INST_Fila_Andar|count[24]          ; Fileira:INST_Fila_Andar|count[24]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.245      ;
+; 0.981 ; Fileira:INST_Fila_Andar|count[22]          ; Fileira:INST_Fila_Andar|count[22]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.247      ;
+; 1.006 ; Fileira:INST_Fila_Andar|count[21]          ; Fileira:INST_Fila_Andar|count[21]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.272      ;
+; 1.008 ; Fileira:INST_Fila_Andar|count[27]          ; Fileira:INST_Fila_Andar|count[27]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.274      ;
+; 1.017 ; Fileira:INST_Fila_Andar|count[1]           ; Fileira:INST_Fila_Andar|count[1]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.283      ;
+; 1.017 ; Fileira:INST_Fila_Andar|count[14]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.283      ;
+; 1.017 ; Fileira:INST_Fila_Andar|count[30]          ; Fileira:INST_Fila_Andar|count[30]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.283      ;
+; 1.020 ; Fileira:INST_Fila_Andar|count[10]          ; Fileira:INST_Fila_Andar|count[10]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.286      ;
+; 1.020 ; Fileira:INST_Fila_Andar|count[16]          ; Fileira:INST_Fila_Andar|count[16]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.286      ;
+; 1.024 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|Contador[1] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.290      ;
+; 1.025 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|Contador[2] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.291      ;
+; 1.058 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.324      ;
+; 1.178 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[26]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.444      ;
+; 1.178 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[1]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.444      ;
+; 1.184 ; Fileira:INST_Fila_Andar|count[29]          ; Fileira:INST_Fila_Andar|count[30]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.450      ;
+; 1.184 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[10]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.450      ;
+; 1.185 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[12]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.451      ;
+; 1.185 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[21]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.451      ;
+; 1.185 ; Fileira:INST_Fila_Andar|count[13]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.451      ;
+; 1.189 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[3]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.455      ;
+; 1.193 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.459      ;
+; 1.213 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[27]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.479      ;
+; 1.214 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[20]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.480      ;
+; 1.218 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[9]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.484      ;
+; 1.221 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[13]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.487      ;
+; 1.224 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[4]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.490      ;
+; 1.225 ; Fileira:INST_Fila_Andar|count[6]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.491      ;
+; 1.225 ; Fileira:INST_Fila_Andar|count[5]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.491      ;
+; 1.249 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[2]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.515      ;
+; 1.249 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[27]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.515      ;
+; 1.255 ; Fileira:INST_Fila_Andar|count[29]          ; Fileira:INST_Fila_Andar|count[31]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.521      ;
+; 1.255 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[11]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.521      ;
+; 1.256 ; Fileira:INST_Fila_Andar|count[13]          ; Fileira:INST_Fila_Andar|count[15]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.522      ;
+; 1.256 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[22]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.522      ;
+; 1.256 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[13]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.522      ;
+; 1.260 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[4]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.526      ;
+; 1.260 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.526      ;
+; 1.275 ; Fileira:INST_Fila_Andar|count[15]          ; Fileira:INST_Fila_Andar|count[16]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.002      ; 1.543      ;
+; 1.277 ; Fileira:INST_Fila_Andar|count[23]          ; Fileira:INST_Fila_Andar|count[24]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.543      ;
+; 1.281 ; Fileira:INST_Fila_Andar|count[7]           ; Fileira:INST_Fila_Andar|count[8]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.547      ;
+; 1.284 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[28]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.550      ;
+; 1.285 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[21]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.551      ;
+; 1.289 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[10]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.555      ;
+; 1.292 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.558      ;
+; 1.295 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.561      ;
+; 1.296 ; Fileira:INST_Fila_Andar|count[5]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.562      ;
+; 1.320 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[3]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.586      ;
+; 1.320 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[28]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.586      ;
+; 1.326 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[12]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.592      ;
+; 1.327 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[23]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.593      ;
+; 1.327 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.593      ;
+; 1.331 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.597      ;
+; 1.331 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.597      ;
+; 1.346 ; Fileira:INST_Fila_Andar|count[15]          ; Fileira:INST_Fila_Andar|count[17]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.002      ; 1.614      ;
+; 1.348 ; Fileira:INST_Fila_Andar|count[23]          ; Fileira:INST_Fila_Andar|count[25]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.614      ;
+; 1.352 ; Fileira:INST_Fila_Andar|count[7]           ; Fileira:INST_Fila_Andar|count[9]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.618      ;
+; 1.355 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[29]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.621      ;
+; 1.356 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[22]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.622      ;
+; 1.360 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[11]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.626      ;
+; 1.361 ; Fileira:INST_Fila_Andar|count[28]          ; Fileira:INST_Fila_Andar|count[29]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.627      ;
+; 1.362 ; Fileira:INST_Fila_Andar|count[24]          ; Fileira:INST_Fila_Andar|count[25]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.628      ;
+; 1.363 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[15]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.629      ;
+; 1.364 ; Fileira:INST_Fila_Andar|count[22]          ; Fileira:INST_Fila_Andar|count[23]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.630      ;
+; 1.366 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.632      ;
+; 1.384 ; Fileira:INST_Fila_Andar|count[6]           ; Fileira:INST_Fila_Andar|count[8]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.650      ;
+; 1.391 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[4]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.657      ;
+; 1.391 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[29]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 1.657      ;
++-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'DP_Clock'                                                                                  ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; DP_Clock ; Rise       ; DP_Clock                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][3] ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Setup Times                                                                       ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+------------+--------+--------+------------+-----------------+
+; DP_FilaAndar_Add    ; DP_Clock   ; 8.836  ; 8.836  ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_Remove ; DP_Clock   ; 7.991  ; 7.991  ; Rise       ; DP_Clock        ;
+; DP_RegA_At_Load     ; DP_Clock   ; 4.110  ; 4.110  ; Rise       ; DP_Clock        ;
+; DP_SensorAndar[*]   ; DP_Clock   ; 3.888  ; 3.888  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[0]  ; DP_Clock   ; 3.642  ; 3.642  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[1]  ; DP_Clock   ; 3.343  ; 3.343  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[2]  ; DP_Clock   ; 3.888  ; 3.888  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[3]  ; DP_Clock   ; 3.767  ; 3.767  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[4]  ; DP_Clock   ; 3.366  ; 3.366  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[5]  ; DP_Clock   ; 3.362  ; 3.362  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[6]  ; DP_Clock   ; 3.391  ; 3.391  ; Rise       ; DP_Clock        ;
+; DP_SensorPeso[*]    ; DP_Clock   ; 3.516  ; 3.516  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[0]   ; DP_Clock   ; 3.141  ; 3.141  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[1]   ; DP_Clock   ; 3.189  ; 3.189  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[2]   ; DP_Clock   ; 2.831  ; 2.831  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[3]   ; DP_Clock   ; 3.490  ; 3.490  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[4]   ; DP_Clock   ; 3.516  ; 3.516  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[5]   ; DP_Clock   ; 3.358  ; 3.358  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[6]   ; DP_Clock   ; 2.869  ; 2.869  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[7]   ; DP_Clock   ; 2.860  ; 2.860  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[8]   ; DP_Clock   ; 3.508  ; 3.508  ; Rise       ; DP_Clock        ;
+; DP_TecladoAndar[*]  ; DP_Clock   ; 12.308 ; 12.308 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[0] ; DP_Clock   ; 11.650 ; 11.650 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[1] ; DP_Clock   ; 11.775 ; 11.775 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[2] ; DP_Clock   ; 11.753 ; 11.753 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[3] ; DP_Clock   ; 11.774 ; 11.774 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[4] ; DP_Clock   ; 11.818 ; 11.818 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[5] ; DP_Clock   ; 12.308 ; 12.308 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[6] ; DP_Clock   ; 11.130 ; 11.130 ; Rise       ; DP_Clock        ;
+; DP_Temp_Start       ; DP_Clock   ; 3.546  ; 3.546  ; Rise       ; DP_Clock        ;
++---------------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Hold Times                                                                        ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+------------+--------+--------+------------+-----------------+
+; DP_FilaAndar_Add    ; DP_Clock   ; -6.302 ; -6.302 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_Remove ; DP_Clock   ; -5.063 ; -5.063 ; Rise       ; DP_Clock        ;
+; DP_RegA_At_Load     ; DP_Clock   ; -3.880 ; -3.880 ; Rise       ; DP_Clock        ;
+; DP_SensorAndar[*]   ; DP_Clock   ; -3.113 ; -3.113 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[0]  ; DP_Clock   ; -3.412 ; -3.412 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[1]  ; DP_Clock   ; -3.113 ; -3.113 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[2]  ; DP_Clock   ; -3.658 ; -3.658 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[3]  ; DP_Clock   ; -3.537 ; -3.537 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[4]  ; DP_Clock   ; -3.136 ; -3.136 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[5]  ; DP_Clock   ; -3.132 ; -3.132 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[6]  ; DP_Clock   ; -3.161 ; -3.161 ; Rise       ; DP_Clock        ;
+; DP_SensorPeso[*]    ; DP_Clock   ; -2.601 ; -2.601 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[0]   ; DP_Clock   ; -2.911 ; -2.911 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[1]   ; DP_Clock   ; -2.959 ; -2.959 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[2]   ; DP_Clock   ; -2.601 ; -2.601 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[3]   ; DP_Clock   ; -3.260 ; -3.260 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[4]   ; DP_Clock   ; -3.286 ; -3.286 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[5]   ; DP_Clock   ; -3.128 ; -3.128 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[6]   ; DP_Clock   ; -2.639 ; -2.639 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[7]   ; DP_Clock   ; -2.630 ; -2.630 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[8]   ; DP_Clock   ; -3.278 ; -3.278 ; Rise       ; DP_Clock        ;
+; DP_TecladoAndar[*]  ; DP_Clock   ; -3.471 ; -3.471 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[0] ; DP_Clock   ; -3.635 ; -3.635 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[1] ; DP_Clock   ; -3.933 ; -3.933 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[2] ; DP_Clock   ; -3.763 ; -3.763 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[3] ; DP_Clock   ; -3.797 ; -3.797 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[4] ; DP_Clock   ; -3.471 ; -3.471 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[5] ; DP_Clock   ; -4.062 ; -4.062 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[6] ; DP_Clock   ; -3.568 ; -3.568 ; Rise       ; DP_Clock        ;
+; DP_Temp_Start       ; DP_Clock   ; -2.933 ; -2.933 ; Rise       ; DP_Clock        ;
++---------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                ;
++------------------------+------------+--------+--------+------------+-----------------+
+; Data Port              ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------------+------------+--------+--------+------------+-----------------+
+; DP_CompA_Igual         ; DP_Clock   ; 16.110 ; 16.110 ; Rise       ; DP_Clock        ;
+; DP_CompA_Maior         ; DP_Clock   ; 15.376 ; 15.376 ; Rise       ; DP_Clock        ;
+; DP_CompA_Menor         ; DP_Clock   ; 16.345 ; 16.345 ; Rise       ; DP_Clock        ;
+; DP_DisplayExterno[*]   ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[0]  ; DP_Clock   ; 18.945 ; 18.945 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[1]  ; DP_Clock   ; 18.269 ; 18.269 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[2]  ; DP_Clock   ; 17.725 ; 17.725 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[3]  ; DP_Clock   ; 17.718 ; 17.718 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[4]  ; DP_Clock   ; 17.968 ; 17.968 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[5]  ; DP_Clock   ; 17.941 ; 17.941 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[6]  ; DP_Clock   ; 18.378 ; 18.378 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[7]  ; DP_Clock   ; 17.912 ; 17.912 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[8]  ; DP_Clock   ; 18.314 ; 18.314 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[9]  ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[10] ; DP_Clock   ; 17.906 ; 17.906 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[11] ; DP_Clock   ; 18.317 ; 18.317 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[12] ; DP_Clock   ; 19.994 ; 19.994 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[13] ; DP_Clock   ; 17.900 ; 17.900 ; Rise       ; DP_Clock        ;
+; DP_DisplayInterno[*]   ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[0]  ; DP_Clock   ; 18.955 ; 18.955 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[1]  ; DP_Clock   ; 18.269 ; 18.269 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[2]  ; DP_Clock   ; 17.715 ; 17.715 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[3]  ; DP_Clock   ; 17.718 ; 17.718 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[4]  ; DP_Clock   ; 17.978 ; 17.978 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[5]  ; DP_Clock   ; 18.189 ; 18.189 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[6]  ; DP_Clock   ; 18.378 ; 18.378 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[7]  ; DP_Clock   ; 17.912 ; 17.912 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[8]  ; DP_Clock   ; 18.314 ; 18.314 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[9]  ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[10] ; DP_Clock   ; 17.906 ; 17.906 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[11] ; DP_Clock   ; 18.317 ; 18.317 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[12] ; DP_Clock   ; 20.004 ; 20.004 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[13] ; DP_Clock   ; 17.890 ; 17.890 ; Rise       ; DP_Clock        ;
+; DP_DisplayPeso[*]      ; DP_Clock   ; 25.581 ; 25.581 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[0]     ; DP_Clock   ; 23.212 ; 23.212 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[1]     ; DP_Clock   ; 23.463 ; 23.463 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[2]     ; DP_Clock   ; 23.742 ; 23.742 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[3]     ; DP_Clock   ; 23.765 ; 23.765 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[4]     ; DP_Clock   ; 23.522 ; 23.522 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[5]     ; DP_Clock   ; 23.751 ; 23.751 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[6]     ; DP_Clock   ; 23.528 ; 23.528 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[7]     ; DP_Clock   ; 24.436 ; 24.436 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[8]     ; DP_Clock   ; 24.438 ; 24.438 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[9]     ; DP_Clock   ; 24.460 ; 24.460 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[10]    ; DP_Clock   ; 24.445 ; 24.445 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[11]    ; DP_Clock   ; 24.737 ; 24.737 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[12]    ; DP_Clock   ; 24.445 ; 24.445 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[13]    ; DP_Clock   ; 25.581 ; 25.581 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[14]    ; DP_Clock   ; 22.279 ; 22.279 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[15]    ; DP_Clock   ; 22.293 ; 22.293 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[16]    ; DP_Clock   ; 22.274 ; 22.274 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[17]    ; DP_Clock   ; 22.031 ; 22.031 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[18]    ; DP_Clock   ; 22.067 ; 22.067 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[19]    ; DP_Clock   ; 22.018 ; 22.018 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[20]    ; DP_Clock   ; 22.465 ; 22.465 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_SigOUT    ; DP_Clock   ; 14.838 ; 14.838 ; Rise       ; DP_Clock        ;
+; DP_Sobrepeso_SigOUT    ; DP_Clock   ; 8.597  ; 8.597  ; Rise       ; DP_Clock        ;
+; DP_Temp_SigOUT         ; DP_Clock   ; 6.102  ; 6.102  ; Rise       ; DP_Clock        ;
++------------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                        ;
++------------------------+------------+--------+--------+------------+-----------------+
+; Data Port              ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------------+------------+--------+--------+------------+-----------------+
+; DP_CompA_Igual         ; DP_Clock   ; 7.905  ; 7.905  ; Rise       ; DP_Clock        ;
+; DP_CompA_Maior         ; DP_Clock   ; 7.280  ; 7.280  ; Rise       ; DP_Clock        ;
+; DP_CompA_Menor         ; DP_Clock   ; 8.114  ; 8.114  ; Rise       ; DP_Clock        ;
+; DP_DisplayExterno[*]   ; DP_Clock   ; 8.017  ; 8.017  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[0]  ; DP_Clock   ; 8.996  ; 8.996  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[1]  ; DP_Clock   ; 8.282  ; 8.282  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[2]  ; DP_Clock   ; 8.029  ; 8.029  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[3]  ; DP_Clock   ; 8.017  ; 8.017  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[4]  ; DP_Clock   ; 8.220  ; 8.220  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[5]  ; DP_Clock   ; 8.233  ; 8.233  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[6]  ; DP_Clock   ; 8.685  ; 8.685  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[7]  ; DP_Clock   ; 9.018  ; 9.018  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[8]  ; DP_Clock   ; 9.235  ; 9.235  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[9]  ; DP_Clock   ; 11.083 ; 11.083 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[10] ; DP_Clock   ; 9.007  ; 9.007  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[11] ; DP_Clock   ; 9.230  ; 9.230  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[12] ; DP_Clock   ; 11.091 ; 11.091 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[13] ; DP_Clock   ; 9.002  ; 9.002  ; Rise       ; DP_Clock        ;
+; DP_DisplayInterno[*]   ; DP_Clock   ; 8.017  ; 8.017  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[0]  ; DP_Clock   ; 9.006  ; 9.006  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[1]  ; DP_Clock   ; 8.282  ; 8.282  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[2]  ; DP_Clock   ; 8.019  ; 8.019  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[3]  ; DP_Clock   ; 8.017  ; 8.017  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[4]  ; DP_Clock   ; 8.230  ; 8.230  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[5]  ; DP_Clock   ; 8.481  ; 8.481  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[6]  ; DP_Clock   ; 8.685  ; 8.685  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[7]  ; DP_Clock   ; 9.018  ; 9.018  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[8]  ; DP_Clock   ; 9.235  ; 9.235  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[9]  ; DP_Clock   ; 11.083 ; 11.083 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[10] ; DP_Clock   ; 9.007  ; 9.007  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[11] ; DP_Clock   ; 9.230  ; 9.230  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[12] ; DP_Clock   ; 11.101 ; 11.101 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[13] ; DP_Clock   ; 8.992  ; 8.992  ; Rise       ; DP_Clock        ;
+; DP_DisplayPeso[*]      ; DP_Clock   ; 7.118  ; 7.118  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[0]     ; DP_Clock   ; 7.520  ; 7.520  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[1]     ; DP_Clock   ; 7.660  ; 7.660  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[2]     ; DP_Clock   ; 7.948  ; 7.948  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[3]     ; DP_Clock   ; 7.699  ; 7.699  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[4]     ; DP_Clock   ; 7.724  ; 7.724  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[5]     ; DP_Clock   ; 7.754  ; 7.754  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[6]     ; DP_Clock   ; 7.424  ; 7.424  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[7]     ; DP_Clock   ; 8.652  ; 8.652  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[8]     ; DP_Clock   ; 8.659  ; 8.659  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[9]     ; DP_Clock   ; 8.688  ; 8.688  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[10]    ; DP_Clock   ; 8.354  ; 8.354  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[11]    ; DP_Clock   ; 8.654  ; 8.654  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[12]    ; DP_Clock   ; 8.661  ; 8.661  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[13]    ; DP_Clock   ; 7.369  ; 7.369  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[14]    ; DP_Clock   ; 9.382  ; 9.382  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[15]    ; DP_Clock   ; 9.396  ; 9.396  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[16]    ; DP_Clock   ; 9.377  ; 9.377  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[17]    ; DP_Clock   ; 9.134  ; 9.134  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[18]    ; DP_Clock   ; 9.170  ; 9.170  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[19]    ; DP_Clock   ; 9.121  ; 9.121  ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[20]    ; DP_Clock   ; 7.118  ; 7.118  ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_SigOUT    ; DP_Clock   ; 8.851  ; 8.851  ; Rise       ; DP_Clock        ;
+; DP_Sobrepeso_SigOUT    ; DP_Clock   ; 7.211  ; 7.211  ; Rise       ; DP_Clock        ;
+; DP_Temp_SigOUT         ; DP_Clock   ; 6.102  ; 6.102  ; Rise       ; DP_Clock        ;
++------------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------+
+; Fast Model Setup Summary           ;
++----------+---------+---------------+
+; Clock    ; Slack   ; End Point TNS ;
++----------+---------+---------------+
+; DP_Clock ; -61.630 ; -4190.210     ;
++----------+---------+---------------+
+
+
++----------------------------------+
+; Fast Model Hold Summary          ;
++----------+-------+---------------+
+; Clock    ; Slack ; End Point TNS ;
++----------+-------+---------------+
+; DP_Clock ; 0.215 ; 0.000         ;
++----------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++----------+--------+--------------------+
+; Clock    ; Slack  ; End Point TNS      ;
++----------+--------+--------------------+
+; DP_Clock ; -1.380 ; -187.380           ;
++----------+--------+--------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'DP_Clock'                                                                                                                            ;
++---------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                          ; To Node                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+; -61.630 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.656     ;
+; -61.595 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.621     ;
+; -61.560 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.586     ;
+; -61.525 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.551     ;
+; -61.500 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.526     ;
+; -61.490 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.516     ;
+; -61.465 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.491     ;
+; -61.455 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.481     ;
+; -61.446 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.472     ;
+; -61.430 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.456     ;
+; -61.420 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.446     ;
+; -61.414 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.440     ;
+; -61.411 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.437     ;
+; -61.395 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.421     ;
+; -61.395 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.421     ;
+; -61.385 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.411     ;
+; -61.379 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.405     ;
+; -61.376 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.402     ;
+; -61.361 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.387     ;
+; -61.360 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.386     ;
+; -61.360 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.386     ;
+; -61.344 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.370     ;
+; -61.341 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.367     ;
+; -61.326 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.352     ;
+; -61.325 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.351     ;
+; -61.325 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.351     ;
+; -61.322 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.348     ;
+; -61.309 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.335     ;
+; -61.306 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.332     ;
+; -61.297 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.327     ;
+; -61.291 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.317     ;
+; -61.291 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.317     ;
+; -61.290 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.316     ;
+; -61.290 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.316     ;
+; -61.287 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.313     ;
+; -61.274 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.300     ;
+; -61.271 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.297     ;
+; -61.271 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.301     ;
+; -61.270 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.296     ;
+; -61.262 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.292     ;
+; -61.256 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[22] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.282     ;
+; -61.256 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.282     ;
+; -61.255 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.281     ;
+; -61.255 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.281     ;
+; -61.252 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.278     ;
+; -61.239 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.265     ;
+; -61.236 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.262     ;
+; -61.236 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.266     ;
+; -61.235 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.261     ;
+; -61.227 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[29]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.257     ;
+; -61.221 ; Fileira:INST_Fila_Andar|inicio[0]  ; Fileira:INST_Fila_Andar|inicio[21] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.247     ;
+; -61.221 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.247     ;
+; -61.220 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.246     ;
+; -61.217 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.243     ;
+; -61.215 ; Fileira:INST_Fila_Andar|fim[2]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.245     ;
+; -61.204 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.230     ;
+; -61.201 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.227     ;
+; -61.201 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[29]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.231     ;
+; -61.200 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.226     ;
+; -61.192 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[28]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.222     ;
+; -61.186 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.212     ;
+; -61.185 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.211     ;
+; -61.182 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.208     ;
+; -61.181 ; Fileira:INST_Fila_Andar|fim[3]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.211     ;
+; -61.180 ; Fileira:INST_Fila_Andar|fim[2]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.210     ;
+; -61.173 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.199     ;
+; -61.169 ; Fileira:INST_Fila_Andar|inicio[3]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.195     ;
+; -61.166 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[28]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.196     ;
+; -61.165 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[28] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.191     ;
+; -61.163 ; Fileira:INST_Fila_Andar|fim[4]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.193     ;
+; -61.161 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.187     ;
+; -61.157 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[27]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.187     ;
+; -61.151 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.177     ;
+; -61.150 ; Fileira:INST_Fila_Andar|inicio[4]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.176     ;
+; -61.148 ; Fileira:INST_Fila_Andar|inicio[9]  ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.174     ;
+; -61.147 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.173     ;
+; -61.146 ; Fileira:INST_Fila_Andar|fim[3]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.176     ;
+; -61.145 ; Fileira:INST_Fila_Andar|fim[2]     ; Fileira:INST_Fila_Andar|fim[29]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.175     ;
+; -61.138 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.164     ;
+; -61.131 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[27]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.161     ;
+; -61.130 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[27] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.156     ;
+; -61.130 ; Fileira:INST_Fila_Andar|fim[5]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.160     ;
+; -61.128 ; Fileira:INST_Fila_Andar|fim[4]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.158     ;
+; -61.126 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[22] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.152     ;
+; -61.122 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[26]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.152     ;
+; -61.118 ; Fileira:INST_Fila_Andar|inicio[10] ; Fileira:INST_Fila_Andar|inicio[31] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.144     ;
+; -61.116 ; Fileira:INST_Fila_Andar|inicio[5]  ; Fileira:INST_Fila_Andar|inicio[24] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.142     ;
+; -61.113 ; Fileira:INST_Fila_Andar|inicio[9]  ; Fileira:INST_Fila_Andar|inicio[30] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.139     ;
+; -61.112 ; Fileira:INST_Fila_Andar|inicio[6]  ; Fileira:INST_Fila_Andar|inicio[25] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.138     ;
+; -61.111 ; Fileira:INST_Fila_Andar|fim[3]     ; Fileira:INST_Fila_Andar|fim[29]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.141     ;
+; -61.110 ; Fileira:INST_Fila_Andar|fim[2]     ; Fileira:INST_Fila_Andar|fim[28]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.140     ;
+; -61.107 ; Fileira:INST_Fila_Andar|inicio[2]  ; Fileira:INST_Fila_Andar|inicio[23] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.133     ;
+; -61.103 ; Fileira:INST_Fila_Andar|inicio[8]  ; Fileira:INST_Fila_Andar|inicio[29] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.129     ;
+; -61.096 ; Fileira:INST_Fila_Andar|fim[1]     ; Fileira:INST_Fila_Andar|fim[26]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.126     ;
+; -61.095 ; Fileira:INST_Fila_Andar|inicio[7]  ; Fileira:INST_Fila_Andar|inicio[26] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.121     ;
+; -61.095 ; Fileira:INST_Fila_Andar|fim[5]     ; Fileira:INST_Fila_Andar|fim[30]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.125     ;
+; -61.093 ; Fileira:INST_Fila_Andar|fim[4]     ; Fileira:INST_Fila_Andar|fim[29]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.123     ;
+; -61.091 ; Fileira:INST_Fila_Andar|fim[6]     ; Fileira:INST_Fila_Andar|fim[31]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.121     ;
+; -61.091 ; Fileira:INST_Fila_Andar|inicio[1]  ; Fileira:INST_Fila_Andar|inicio[21] ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.006     ; 62.117     ;
+; -61.087 ; Fileira:INST_Fila_Andar|fim[0]     ; Fileira:INST_Fila_Andar|fim[25]    ; DP_Clock     ; DP_Clock    ; 1.000        ; -0.002     ; 62.117     ;
++---------+------------------------------------+------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'DP_Clock'                                                                                                                                           ;
++-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                  ; To Node                                    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; Fileira:INST_Fila_Andar|fim[0]             ; Fileira:INST_Fila_Andar|fim[0]             ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Fileira:INST_Fila_Andar|inicio[0]          ; Fileira:INST_Fila_Andar|inicio[0]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|Contador[0] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|Contador[1] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|Contador[2] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; Temporizador:INST_Temporizador|TEMP_SigOUT ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241 ; Fileira:INST_Fila_Andar|count[31]          ; Fileira:INST_Fila_Andar|count[31]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.393      ;
+; 0.250 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|Contador[1] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.402      ;
+; 0.250 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|Contador[2] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.402      ;
+; 0.252 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|Contador[0] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.404      ;
+; 0.355 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[0]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.507      ;
+; 0.356 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[25]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.508      ;
+; 0.358 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[9]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[11]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Fileira:INST_Fila_Andar|count[13]          ; Fileira:INST_Fila_Andar|count[13]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Fileira:INST_Fila_Andar|count[15]          ; Fileira:INST_Fila_Andar|count[15]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[20]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Fileira:INST_Fila_Andar|count[23]          ; Fileira:INST_Fila_Andar|count[23]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.358 ; Fileira:INST_Fila_Andar|count[29]          ; Fileira:INST_Fila_Andar|count[29]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.510      ;
+; 0.360 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[2]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; Fileira:INST_Fila_Andar|count[7]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[4]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.513      ;
+; 0.367 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[19]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.367 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[26]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[8]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[12]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.521      ;
+; 0.371 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[3]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; Fileira:INST_Fila_Andar|count[5]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; Fileira:INST_Fila_Andar|count[6]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.524      ;
+; 0.423 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.575      ;
+; 0.436 ; Fileira:INST_Fila_Andar|count[24]          ; Fileira:INST_Fila_Andar|count[24]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.588      ;
+; 0.436 ; Temporizador:INST_Temporizador|Contador[2] ; Temporizador:INST_Temporizador|Contador[0] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.588      ;
+; 0.438 ; Fileira:INST_Fila_Andar|count[28]          ; Fileira:INST_Fila_Andar|count[28]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.590      ;
+; 0.441 ; Fileira:INST_Fila_Andar|count[22]          ; Fileira:INST_Fila_Andar|count[22]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.593      ;
+; 0.448 ; Fileira:INST_Fila_Andar|count[27]          ; Fileira:INST_Fila_Andar|count[27]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.600      ;
+; 0.452 ; Fileira:INST_Fila_Andar|count[1]           ; Fileira:INST_Fila_Andar|count[1]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.604      ;
+; 0.452 ; Fileira:INST_Fila_Andar|count[16]          ; Fileira:INST_Fila_Andar|count[16]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.604      ;
+; 0.453 ; Fileira:INST_Fila_Andar|count[14]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.605      ;
+; 0.454 ; Fileira:INST_Fila_Andar|count[30]          ; Fileira:INST_Fila_Andar|count[30]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.606      ;
+; 0.456 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|Contador[2] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.608      ;
+; 0.457 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|Contador[1] ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.609      ;
+; 0.458 ; Fileira:INST_Fila_Andar|count[21]          ; Fileira:INST_Fila_Andar|count[21]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.610      ;
+; 0.461 ; Fileira:INST_Fila_Andar|count[10]          ; Fileira:INST_Fila_Andar|count[10]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.613      ;
+; 0.486 ; Temporizador:INST_Temporizador|Contador[0] ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.638      ;
+; 0.493 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[1]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.645      ;
+; 0.494 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[26]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.646      ;
+; 0.496 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[12]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; Fileira:INST_Fila_Andar|count[13]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; Fileira:INST_Fila_Andar|count[29]          ; Fileira:INST_Fila_Andar|count[30]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[21]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.496 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[10]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.648      ;
+; 0.498 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[3]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.650      ;
+; 0.499 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.651      ;
+; 0.507 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[20]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.659      ;
+; 0.507 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[27]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.659      ;
+; 0.508 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[9]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.660      ;
+; 0.509 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[13]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.661      ;
+; 0.511 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[4]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; Fileira:INST_Fila_Andar|count[6]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; Fileira:INST_Fila_Andar|count[5]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.664      ;
+; 0.528 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[2]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.680      ;
+; 0.529 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[27]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.681      ;
+; 0.531 ; Fileira:INST_Fila_Andar|count[29]          ; Fileira:INST_Fila_Andar|count[31]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[11]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; Fileira:INST_Fila_Andar|count[13]          ; Fileira:INST_Fila_Andar|count[15]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[22]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.531 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[13]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.683      ;
+; 0.533 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[4]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.685      ;
+; 0.534 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.686      ;
+; 0.541 ; Fileira:INST_Fila_Andar|count[15]          ; Fileira:INST_Fila_Andar|count[16]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.002      ; 0.695      ;
+; 0.542 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[28]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.542 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[21]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.694      ;
+; 0.543 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[10]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.695      ;
+; 0.544 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.696      ;
+; 0.546 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547 ; Temporizador:INST_Temporizador|Contador[1] ; Temporizador:INST_Temporizador|TEMP_SigOUT ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.699      ;
+; 0.547 ; Fileira:INST_Fila_Andar|count[5]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.699      ;
+; 0.551 ; Fileira:INST_Fila_Andar|count[23]          ; Fileira:INST_Fila_Andar|count[24]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.703      ;
+; 0.554 ; Fileira:INST_Fila_Andar|count[7]           ; Fileira:INST_Fila_Andar|count[8]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.706      ;
+; 0.563 ; Fileira:INST_Fila_Andar|count[0]           ; Fileira:INST_Fila_Andar|count[3]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.715      ;
+; 0.564 ; Fileira:INST_Fila_Andar|count[25]          ; Fileira:INST_Fila_Andar|count[28]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.716      ;
+; 0.566 ; Fileira:INST_Fila_Andar|count[20]          ; Fileira:INST_Fila_Andar|count[23]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; Fileira:INST_Fila_Andar|count[9]           ; Fileira:INST_Fila_Andar|count[12]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.566 ; Fileira:INST_Fila_Andar|count[11]          ; Fileira:INST_Fila_Andar|count[14]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.718      ;
+; 0.568 ; Fileira:INST_Fila_Andar|count[2]           ; Fileira:INST_Fila_Andar|count[5]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.720      ;
+; 0.569 ; Fileira:INST_Fila_Andar|count[4]           ; Fileira:INST_Fila_Andar|count[7]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.721      ;
+; 0.574 ; Fileira:INST_Fila_Andar|count[24]          ; Fileira:INST_Fila_Andar|count[25]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.726      ;
+; 0.576 ; Fileira:INST_Fila_Andar|count[15]          ; Fileira:INST_Fila_Andar|count[17]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.002      ; 0.730      ;
+; 0.576 ; Fileira:INST_Fila_Andar|count[28]          ; Fileira:INST_Fila_Andar|count[29]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.728      ;
+; 0.577 ; Fileira:INST_Fila_Andar|count[19]          ; Fileira:INST_Fila_Andar|count[22]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.729      ;
+; 0.577 ; Fileira:INST_Fila_Andar|count[26]          ; Fileira:INST_Fila_Andar|count[29]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.729      ;
+; 0.578 ; Fileira:INST_Fila_Andar|count[8]           ; Fileira:INST_Fila_Andar|count[11]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.730      ;
+; 0.579 ; Fileira:INST_Fila_Andar|count[12]          ; Fileira:INST_Fila_Andar|count[15]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; Fileira:INST_Fila_Andar|count[22]          ; Fileira:INST_Fila_Andar|count[23]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.731      ;
+; 0.581 ; Fileira:INST_Fila_Andar|count[3]           ; Fileira:INST_Fila_Andar|count[6]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.733      ;
+; 0.586 ; Fileira:INST_Fila_Andar|count[23]          ; Fileira:INST_Fila_Andar|count[25]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.738      ;
+; 0.588 ; Fileira:INST_Fila_Andar|count[27]          ; Fileira:INST_Fila_Andar|count[28]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.740      ;
+; 0.589 ; Fileira:INST_Fila_Andar|count[7]           ; Fileira:INST_Fila_Andar|count[9]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.741      ;
+; 0.592 ; Fileira:INST_Fila_Andar|count[1]           ; Fileira:INST_Fila_Andar|count[2]           ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.744      ;
+; 0.592 ; Fileira:INST_Fila_Andar|count[16]          ; Fileira:INST_Fila_Andar|count[17]          ; DP_Clock     ; DP_Clock    ; 0.000        ; 0.000      ; 0.744      ;
++-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'DP_Clock'                                                                                  ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                                  ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; DP_Clock ; Rise       ; DP_Clock                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[0]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[10]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[11]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[12]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[13]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[14]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[15]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[16]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[17]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[18]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[19]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[1]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[20]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[21]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[22]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[23]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[24]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[25]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[26]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[27]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[28]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[29]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[2]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[30]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[31]       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[3]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[4]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[5]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[6]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[7]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[8]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|count[9]        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[0][6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][3] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][4] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][5] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][6] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[1][6] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][0] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][0] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][1] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][1] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][2] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][2] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; DP_Clock ; Rise       ; Fileira:INST_Fila_Andar|fileira_v[2][3] ;
++--------+--------------+----------------+------------------+----------+------------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Setup Times                                                                     ;
++---------------------+------------+-------+-------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------+------------+-------+-------+------------+-----------------+
+; DP_FilaAndar_Add    ; DP_Clock   ; 4.439 ; 4.439 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_Remove ; DP_Clock   ; 4.087 ; 4.087 ; Rise       ; DP_Clock        ;
+; DP_RegA_At_Load     ; DP_Clock   ; 2.263 ; 2.263 ; Rise       ; DP_Clock        ;
+; DP_SensorAndar[*]   ; DP_Clock   ; 2.111 ; 2.111 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[0]  ; DP_Clock   ; 1.976 ; 1.976 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[1]  ; DP_Clock   ; 1.828 ; 1.828 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[2]  ; DP_Clock   ; 2.111 ; 2.111 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[3]  ; DP_Clock   ; 2.045 ; 2.045 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[4]  ; DP_Clock   ; 1.853 ; 1.853 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[5]  ; DP_Clock   ; 1.839 ; 1.839 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[6]  ; DP_Clock   ; 1.885 ; 1.885 ; Rise       ; DP_Clock        ;
+; DP_SensorPeso[*]    ; DP_Clock   ; 1.928 ; 1.928 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[0]   ; DP_Clock   ; 1.734 ; 1.734 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[1]   ; DP_Clock   ; 1.762 ; 1.762 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[2]   ; DP_Clock   ; 1.580 ; 1.580 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[3]   ; DP_Clock   ; 1.907 ; 1.907 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[4]   ; DP_Clock   ; 1.928 ; 1.928 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[5]   ; DP_Clock   ; 1.827 ; 1.827 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[6]   ; DP_Clock   ; 1.618 ; 1.618 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[7]   ; DP_Clock   ; 1.610 ; 1.610 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[8]   ; DP_Clock   ; 1.922 ; 1.922 ; Rise       ; DP_Clock        ;
+; DP_TecladoAndar[*]  ; DP_Clock   ; 5.977 ; 5.977 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[0] ; DP_Clock   ; 5.650 ; 5.650 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[1] ; DP_Clock   ; 5.771 ; 5.771 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[2] ; DP_Clock   ; 5.744 ; 5.744 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[3] ; DP_Clock   ; 5.774 ; 5.774 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[4] ; DP_Clock   ; 5.738 ; 5.738 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[5] ; DP_Clock   ; 5.977 ; 5.977 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[6] ; DP_Clock   ; 5.508 ; 5.508 ; Rise       ; DP_Clock        ;
+; DP_Temp_Start       ; DP_Clock   ; 1.922 ; 1.922 ; Rise       ; DP_Clock        ;
++---------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Hold Times                                                                        ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+------------+--------+--------+------------+-----------------+
+; DP_FilaAndar_Add    ; DP_Clock   ; -3.226 ; -3.226 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_Remove ; DP_Clock   ; -2.640 ; -2.640 ; Rise       ; DP_Clock        ;
+; DP_RegA_At_Load     ; DP_Clock   ; -2.143 ; -2.143 ; Rise       ; DP_Clock        ;
+; DP_SensorAndar[*]   ; DP_Clock   ; -1.708 ; -1.708 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[0]  ; DP_Clock   ; -1.856 ; -1.856 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[1]  ; DP_Clock   ; -1.708 ; -1.708 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[2]  ; DP_Clock   ; -1.991 ; -1.991 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[3]  ; DP_Clock   ; -1.925 ; -1.925 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[4]  ; DP_Clock   ; -1.733 ; -1.733 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[5]  ; DP_Clock   ; -1.719 ; -1.719 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[6]  ; DP_Clock   ; -1.765 ; -1.765 ; Rise       ; DP_Clock        ;
+; DP_SensorPeso[*]    ; DP_Clock   ; -1.460 ; -1.460 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[0]   ; DP_Clock   ; -1.614 ; -1.614 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[1]   ; DP_Clock   ; -1.642 ; -1.642 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[2]   ; DP_Clock   ; -1.460 ; -1.460 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[3]   ; DP_Clock   ; -1.787 ; -1.787 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[4]   ; DP_Clock   ; -1.808 ; -1.808 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[5]   ; DP_Clock   ; -1.707 ; -1.707 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[6]   ; DP_Clock   ; -1.498 ; -1.498 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[7]   ; DP_Clock   ; -1.490 ; -1.490 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[8]   ; DP_Clock   ; -1.802 ; -1.802 ; Rise       ; DP_Clock        ;
+; DP_TecladoAndar[*]  ; DP_Clock   ; -1.898 ; -1.898 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[0] ; DP_Clock   ; -2.002 ; -2.002 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[1] ; DP_Clock   ; -2.175 ; -2.175 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[2] ; DP_Clock   ; -2.032 ; -2.032 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[3] ; DP_Clock   ; -2.049 ; -2.049 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[4] ; DP_Clock   ; -1.898 ; -1.898 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[5] ; DP_Clock   ; -2.212 ; -2.212 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[6] ; DP_Clock   ; -1.970 ; -1.970 ; Rise       ; DP_Clock        ;
+; DP_Temp_Start       ; DP_Clock   ; -1.631 ; -1.631 ; Rise       ; DP_Clock        ;
++---------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                ;
++------------------------+------------+--------+--------+------------+-----------------+
+; Data Port              ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------------+------------+--------+--------+------------+-----------------+
+; DP_CompA_Igual         ; DP_Clock   ; 7.998  ; 7.998  ; Rise       ; DP_Clock        ;
+; DP_CompA_Maior         ; DP_Clock   ; 7.648  ; 7.648  ; Rise       ; DP_Clock        ;
+; DP_CompA_Menor         ; DP_Clock   ; 8.072  ; 8.072  ; Rise       ; DP_Clock        ;
+; DP_DisplayExterno[*]   ; DP_Clock   ; 9.688  ; 9.688  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[0]  ; DP_Clock   ; 9.069  ; 9.069  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[1]  ; DP_Clock   ; 8.766  ; 8.766  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[2]  ; DP_Clock   ; 8.529  ; 8.529  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[3]  ; DP_Clock   ; 8.529  ; 8.529  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[4]  ; DP_Clock   ; 8.635  ; 8.635  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[5]  ; DP_Clock   ; 8.614  ; 8.614  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[6]  ; DP_Clock   ; 8.831  ; 8.831  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[7]  ; DP_Clock   ; 8.606  ; 8.606  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[8]  ; DP_Clock   ; 8.774  ; 8.774  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[9]  ; DP_Clock   ; 9.688  ; 9.688  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[10] ; DP_Clock   ; 8.590  ; 8.590  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[11] ; DP_Clock   ; 8.773  ; 8.773  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[12] ; DP_Clock   ; 9.592  ; 9.592  ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[13] ; DP_Clock   ; 8.575  ; 8.575  ; Rise       ; DP_Clock        ;
+; DP_DisplayInterno[*]   ; DP_Clock   ; 9.688  ; 9.688  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[0]  ; DP_Clock   ; 9.079  ; 9.079  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[1]  ; DP_Clock   ; 8.766  ; 8.766  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[2]  ; DP_Clock   ; 8.519  ; 8.519  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[3]  ; DP_Clock   ; 8.529  ; 8.529  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[4]  ; DP_Clock   ; 8.645  ; 8.645  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[5]  ; DP_Clock   ; 8.736  ; 8.736  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[6]  ; DP_Clock   ; 8.831  ; 8.831  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[7]  ; DP_Clock   ; 8.606  ; 8.606  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[8]  ; DP_Clock   ; 8.774  ; 8.774  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[9]  ; DP_Clock   ; 9.688  ; 9.688  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[10] ; DP_Clock   ; 8.590  ; 8.590  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[11] ; DP_Clock   ; 8.773  ; 8.773  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[12] ; DP_Clock   ; 9.602  ; 9.602  ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[13] ; DP_Clock   ; 8.565  ; 8.565  ; Rise       ; DP_Clock        ;
+; DP_DisplayPeso[*]      ; DP_Clock   ; 11.959 ; 11.959 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[0]     ; DP_Clock   ; 10.914 ; 10.914 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[1]     ; DP_Clock   ; 11.010 ; 11.010 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[2]     ; DP_Clock   ; 11.137 ; 11.137 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[3]     ; DP_Clock   ; 11.171 ; 11.171 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[4]     ; DP_Clock   ; 11.051 ; 11.051 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[5]     ; DP_Clock   ; 11.174 ; 11.174 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[6]     ; DP_Clock   ; 11.056 ; 11.056 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[7]     ; DP_Clock   ; 11.443 ; 11.443 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[8]     ; DP_Clock   ; 11.445 ; 11.445 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[9]     ; DP_Clock   ; 11.469 ; 11.469 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[10]    ; DP_Clock   ; 11.453 ; 11.453 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[11]    ; DP_Clock   ; 11.589 ; 11.589 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[12]    ; DP_Clock   ; 11.452 ; 11.452 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[13]    ; DP_Clock   ; 11.959 ; 11.959 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[14]    ; DP_Clock   ; 10.465 ; 10.465 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[15]    ; DP_Clock   ; 10.466 ; 10.466 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[16]    ; DP_Clock   ; 10.481 ; 10.481 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[17]    ; DP_Clock   ; 10.365 ; 10.365 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[18]    ; DP_Clock   ; 10.382 ; 10.382 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[19]    ; DP_Clock   ; 10.352 ; 10.352 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[20]    ; DP_Clock   ; 10.551 ; 10.551 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_SigOUT    ; DP_Clock   ; 7.465  ; 7.465  ; Rise       ; DP_Clock        ;
+; DP_Sobrepeso_SigOUT    ; DP_Clock   ; 4.600  ; 4.600  ; Rise       ; DP_Clock        ;
+; DP_Temp_SigOUT         ; DP_Clock   ; 3.491  ; 3.491  ; Rise       ; DP_Clock        ;
++------------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                      ;
++------------------------+------------+-------+-------+------------+-----------------+
+; Data Port              ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------------+------------+-------+-------+------------+-----------------+
+; DP_CompA_Igual         ; DP_Clock   ; 4.331 ; 4.331 ; Rise       ; DP_Clock        ;
+; DP_CompA_Maior         ; DP_Clock   ; 4.037 ; 4.037 ; Rise       ; DP_Clock        ;
+; DP_CompA_Menor         ; DP_Clock   ; 4.410 ; 4.410 ; Rise       ; DP_Clock        ;
+; DP_DisplayExterno[*]   ; DP_Clock   ; 4.360 ; 4.360 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[0]  ; DP_Clock   ; 4.799 ; 4.799 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[1]  ; DP_Clock   ; 4.473 ; 4.473 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[2]  ; DP_Clock   ; 4.366 ; 4.366 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[3]  ; DP_Clock   ; 4.360 ; 4.360 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[4]  ; DP_Clock   ; 4.456 ; 4.456 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[5]  ; DP_Clock   ; 4.447 ; 4.447 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[6]  ; DP_Clock   ; 4.671 ; 4.671 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[7]  ; DP_Clock   ; 4.814 ; 4.814 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[8]  ; DP_Clock   ; 4.902 ; 4.902 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[9]  ; DP_Clock   ; 5.800 ; 5.800 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[10] ; DP_Clock   ; 4.801 ; 4.801 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[11] ; DP_Clock   ; 4.900 ; 4.900 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[12] ; DP_Clock   ; 5.802 ; 5.802 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[13] ; DP_Clock   ; 4.794 ; 4.794 ; Rise       ; DP_Clock        ;
+; DP_DisplayInterno[*]   ; DP_Clock   ; 4.356 ; 4.356 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[0]  ; DP_Clock   ; 4.809 ; 4.809 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[1]  ; DP_Clock   ; 4.473 ; 4.473 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[2]  ; DP_Clock   ; 4.356 ; 4.356 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[3]  ; DP_Clock   ; 4.360 ; 4.360 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[4]  ; DP_Clock   ; 4.466 ; 4.466 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[5]  ; DP_Clock   ; 4.569 ; 4.569 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[6]  ; DP_Clock   ; 4.671 ; 4.671 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[7]  ; DP_Clock   ; 4.814 ; 4.814 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[8]  ; DP_Clock   ; 4.902 ; 4.902 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[9]  ; DP_Clock   ; 5.800 ; 5.800 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[10] ; DP_Clock   ; 4.801 ; 4.801 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[11] ; DP_Clock   ; 4.900 ; 4.900 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[12] ; DP_Clock   ; 5.812 ; 5.812 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[13] ; DP_Clock   ; 4.784 ; 4.784 ; Rise       ; DP_Clock        ;
+; DP_DisplayPeso[*]      ; DP_Clock   ; 3.930 ; 3.930 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[0]     ; DP_Clock   ; 4.088 ; 4.088 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[1]     ; DP_Clock   ; 4.132 ; 4.132 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[2]     ; DP_Clock   ; 4.268 ; 4.268 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[3]     ; DP_Clock   ; 4.172 ; 4.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[4]     ; DP_Clock   ; 4.179 ; 4.179 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[5]     ; DP_Clock   ; 4.220 ; 4.220 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[6]     ; DP_Clock   ; 4.077 ; 4.077 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[7]     ; DP_Clock   ; 4.571 ; 4.571 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[8]     ; DP_Clock   ; 4.577 ; 4.577 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[9]     ; DP_Clock   ; 4.607 ; 4.607 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[10]    ; DP_Clock   ; 4.445 ; 4.445 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[11]    ; DP_Clock   ; 4.588 ; 4.588 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[12]    ; DP_Clock   ; 4.580 ; 4.580 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[13]    ; DP_Clock   ; 4.043 ; 4.043 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[14]    ; DP_Clock   ; 4.912 ; 4.912 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[15]    ; DP_Clock   ; 4.913 ; 4.913 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[16]    ; DP_Clock   ; 4.928 ; 4.928 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[17]    ; DP_Clock   ; 4.812 ; 4.812 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[18]    ; DP_Clock   ; 4.829 ; 4.829 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[19]    ; DP_Clock   ; 4.799 ; 4.799 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[20]    ; DP_Clock   ; 3.930 ; 3.930 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_SigOUT    ; DP_Clock   ; 4.794 ; 4.794 ; Rise       ; DP_Clock        ;
+; DP_Sobrepeso_SigOUT    ; DP_Clock   ; 3.999 ; 3.999 ; Rise       ; DP_Clock        ;
+; DP_Temp_SigOUT         ; DP_Clock   ; 3.491 ; 3.491 ; Rise       ; DP_Clock        ;
++------------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -135.981  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  DP_Clock        ; -135.981  ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -9361.467 ; 0.0   ; 0.0      ; 0.0     ; -187.38             ;
+;  DP_Clock        ; -9361.467 ; 0.000 ; N/A      ; N/A     ; -187.380            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Setup Times                                                                       ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+------------+--------+--------+------------+-----------------+
+; DP_FilaAndar_Add    ; DP_Clock   ; 8.836  ; 8.836  ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_Remove ; DP_Clock   ; 7.991  ; 7.991  ; Rise       ; DP_Clock        ;
+; DP_RegA_At_Load     ; DP_Clock   ; 4.110  ; 4.110  ; Rise       ; DP_Clock        ;
+; DP_SensorAndar[*]   ; DP_Clock   ; 3.888  ; 3.888  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[0]  ; DP_Clock   ; 3.642  ; 3.642  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[1]  ; DP_Clock   ; 3.343  ; 3.343  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[2]  ; DP_Clock   ; 3.888  ; 3.888  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[3]  ; DP_Clock   ; 3.767  ; 3.767  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[4]  ; DP_Clock   ; 3.366  ; 3.366  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[5]  ; DP_Clock   ; 3.362  ; 3.362  ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[6]  ; DP_Clock   ; 3.391  ; 3.391  ; Rise       ; DP_Clock        ;
+; DP_SensorPeso[*]    ; DP_Clock   ; 3.516  ; 3.516  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[0]   ; DP_Clock   ; 3.141  ; 3.141  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[1]   ; DP_Clock   ; 3.189  ; 3.189  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[2]   ; DP_Clock   ; 2.831  ; 2.831  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[3]   ; DP_Clock   ; 3.490  ; 3.490  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[4]   ; DP_Clock   ; 3.516  ; 3.516  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[5]   ; DP_Clock   ; 3.358  ; 3.358  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[6]   ; DP_Clock   ; 2.869  ; 2.869  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[7]   ; DP_Clock   ; 2.860  ; 2.860  ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[8]   ; DP_Clock   ; 3.508  ; 3.508  ; Rise       ; DP_Clock        ;
+; DP_TecladoAndar[*]  ; DP_Clock   ; 12.308 ; 12.308 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[0] ; DP_Clock   ; 11.650 ; 11.650 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[1] ; DP_Clock   ; 11.775 ; 11.775 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[2] ; DP_Clock   ; 11.753 ; 11.753 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[3] ; DP_Clock   ; 11.774 ; 11.774 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[4] ; DP_Clock   ; 11.818 ; 11.818 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[5] ; DP_Clock   ; 12.308 ; 12.308 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[6] ; DP_Clock   ; 11.130 ; 11.130 ; Rise       ; DP_Clock        ;
+; DP_Temp_Start       ; DP_Clock   ; 3.546  ; 3.546  ; Rise       ; DP_Clock        ;
++---------------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Hold Times                                                                        ;
++---------------------+------------+--------+--------+------------+-----------------+
+; Data Port           ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------+------------+--------+--------+------------+-----------------+
+; DP_FilaAndar_Add    ; DP_Clock   ; -3.226 ; -3.226 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_Remove ; DP_Clock   ; -2.640 ; -2.640 ; Rise       ; DP_Clock        ;
+; DP_RegA_At_Load     ; DP_Clock   ; -2.143 ; -2.143 ; Rise       ; DP_Clock        ;
+; DP_SensorAndar[*]   ; DP_Clock   ; -1.708 ; -1.708 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[0]  ; DP_Clock   ; -1.856 ; -1.856 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[1]  ; DP_Clock   ; -1.708 ; -1.708 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[2]  ; DP_Clock   ; -1.991 ; -1.991 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[3]  ; DP_Clock   ; -1.925 ; -1.925 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[4]  ; DP_Clock   ; -1.733 ; -1.733 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[5]  ; DP_Clock   ; -1.719 ; -1.719 ; Rise       ; DP_Clock        ;
+;  DP_SensorAndar[6]  ; DP_Clock   ; -1.765 ; -1.765 ; Rise       ; DP_Clock        ;
+; DP_SensorPeso[*]    ; DP_Clock   ; -1.460 ; -1.460 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[0]   ; DP_Clock   ; -1.614 ; -1.614 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[1]   ; DP_Clock   ; -1.642 ; -1.642 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[2]   ; DP_Clock   ; -1.460 ; -1.460 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[3]   ; DP_Clock   ; -1.787 ; -1.787 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[4]   ; DP_Clock   ; -1.808 ; -1.808 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[5]   ; DP_Clock   ; -1.707 ; -1.707 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[6]   ; DP_Clock   ; -1.498 ; -1.498 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[7]   ; DP_Clock   ; -1.490 ; -1.490 ; Rise       ; DP_Clock        ;
+;  DP_SensorPeso[8]   ; DP_Clock   ; -1.802 ; -1.802 ; Rise       ; DP_Clock        ;
+; DP_TecladoAndar[*]  ; DP_Clock   ; -1.898 ; -1.898 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[0] ; DP_Clock   ; -2.002 ; -2.002 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[1] ; DP_Clock   ; -2.175 ; -2.175 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[2] ; DP_Clock   ; -2.032 ; -2.032 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[3] ; DP_Clock   ; -2.049 ; -2.049 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[4] ; DP_Clock   ; -1.898 ; -1.898 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[5] ; DP_Clock   ; -2.212 ; -2.212 ; Rise       ; DP_Clock        ;
+;  DP_TecladoAndar[6] ; DP_Clock   ; -1.970 ; -1.970 ; Rise       ; DP_Clock        ;
+; DP_Temp_Start       ; DP_Clock   ; -1.631 ; -1.631 ; Rise       ; DP_Clock        ;
++---------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                ;
++------------------------+------------+--------+--------+------------+-----------------+
+; Data Port              ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++------------------------+------------+--------+--------+------------+-----------------+
+; DP_CompA_Igual         ; DP_Clock   ; 16.110 ; 16.110 ; Rise       ; DP_Clock        ;
+; DP_CompA_Maior         ; DP_Clock   ; 15.376 ; 15.376 ; Rise       ; DP_Clock        ;
+; DP_CompA_Menor         ; DP_Clock   ; 16.345 ; 16.345 ; Rise       ; DP_Clock        ;
+; DP_DisplayExterno[*]   ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[0]  ; DP_Clock   ; 18.945 ; 18.945 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[1]  ; DP_Clock   ; 18.269 ; 18.269 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[2]  ; DP_Clock   ; 17.725 ; 17.725 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[3]  ; DP_Clock   ; 17.718 ; 17.718 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[4]  ; DP_Clock   ; 17.968 ; 17.968 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[5]  ; DP_Clock   ; 17.941 ; 17.941 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[6]  ; DP_Clock   ; 18.378 ; 18.378 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[7]  ; DP_Clock   ; 17.912 ; 17.912 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[8]  ; DP_Clock   ; 18.314 ; 18.314 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[9]  ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[10] ; DP_Clock   ; 17.906 ; 17.906 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[11] ; DP_Clock   ; 18.317 ; 18.317 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[12] ; DP_Clock   ; 19.994 ; 19.994 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[13] ; DP_Clock   ; 17.900 ; 17.900 ; Rise       ; DP_Clock        ;
+; DP_DisplayInterno[*]   ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[0]  ; DP_Clock   ; 18.955 ; 18.955 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[1]  ; DP_Clock   ; 18.269 ; 18.269 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[2]  ; DP_Clock   ; 17.715 ; 17.715 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[3]  ; DP_Clock   ; 17.718 ; 17.718 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[4]  ; DP_Clock   ; 17.978 ; 17.978 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[5]  ; DP_Clock   ; 18.189 ; 18.189 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[6]  ; DP_Clock   ; 18.378 ; 18.378 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[7]  ; DP_Clock   ; 17.912 ; 17.912 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[8]  ; DP_Clock   ; 18.314 ; 18.314 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[9]  ; DP_Clock   ; 20.172 ; 20.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[10] ; DP_Clock   ; 17.906 ; 17.906 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[11] ; DP_Clock   ; 18.317 ; 18.317 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[12] ; DP_Clock   ; 20.004 ; 20.004 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[13] ; DP_Clock   ; 17.890 ; 17.890 ; Rise       ; DP_Clock        ;
+; DP_DisplayPeso[*]      ; DP_Clock   ; 25.581 ; 25.581 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[0]     ; DP_Clock   ; 23.212 ; 23.212 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[1]     ; DP_Clock   ; 23.463 ; 23.463 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[2]     ; DP_Clock   ; 23.742 ; 23.742 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[3]     ; DP_Clock   ; 23.765 ; 23.765 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[4]     ; DP_Clock   ; 23.522 ; 23.522 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[5]     ; DP_Clock   ; 23.751 ; 23.751 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[6]     ; DP_Clock   ; 23.528 ; 23.528 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[7]     ; DP_Clock   ; 24.436 ; 24.436 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[8]     ; DP_Clock   ; 24.438 ; 24.438 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[9]     ; DP_Clock   ; 24.460 ; 24.460 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[10]    ; DP_Clock   ; 24.445 ; 24.445 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[11]    ; DP_Clock   ; 24.737 ; 24.737 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[12]    ; DP_Clock   ; 24.445 ; 24.445 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[13]    ; DP_Clock   ; 25.581 ; 25.581 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[14]    ; DP_Clock   ; 22.279 ; 22.279 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[15]    ; DP_Clock   ; 22.293 ; 22.293 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[16]    ; DP_Clock   ; 22.274 ; 22.274 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[17]    ; DP_Clock   ; 22.031 ; 22.031 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[18]    ; DP_Clock   ; 22.067 ; 22.067 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[19]    ; DP_Clock   ; 22.018 ; 22.018 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[20]    ; DP_Clock   ; 22.465 ; 22.465 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_SigOUT    ; DP_Clock   ; 14.838 ; 14.838 ; Rise       ; DP_Clock        ;
+; DP_Sobrepeso_SigOUT    ; DP_Clock   ; 8.597  ; 8.597  ; Rise       ; DP_Clock        ;
+; DP_Temp_SigOUT         ; DP_Clock   ; 6.102  ; 6.102  ; Rise       ; DP_Clock        ;
++------------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                      ;
++------------------------+------------+-------+-------+------------+-----------------+
+; Data Port              ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++------------------------+------------+-------+-------+------------+-----------------+
+; DP_CompA_Igual         ; DP_Clock   ; 4.331 ; 4.331 ; Rise       ; DP_Clock        ;
+; DP_CompA_Maior         ; DP_Clock   ; 4.037 ; 4.037 ; Rise       ; DP_Clock        ;
+; DP_CompA_Menor         ; DP_Clock   ; 4.410 ; 4.410 ; Rise       ; DP_Clock        ;
+; DP_DisplayExterno[*]   ; DP_Clock   ; 4.360 ; 4.360 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[0]  ; DP_Clock   ; 4.799 ; 4.799 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[1]  ; DP_Clock   ; 4.473 ; 4.473 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[2]  ; DP_Clock   ; 4.366 ; 4.366 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[3]  ; DP_Clock   ; 4.360 ; 4.360 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[4]  ; DP_Clock   ; 4.456 ; 4.456 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[5]  ; DP_Clock   ; 4.447 ; 4.447 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[6]  ; DP_Clock   ; 4.671 ; 4.671 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[7]  ; DP_Clock   ; 4.814 ; 4.814 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[8]  ; DP_Clock   ; 4.902 ; 4.902 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[9]  ; DP_Clock   ; 5.800 ; 5.800 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[10] ; DP_Clock   ; 4.801 ; 4.801 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[11] ; DP_Clock   ; 4.900 ; 4.900 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[12] ; DP_Clock   ; 5.802 ; 5.802 ; Rise       ; DP_Clock        ;
+;  DP_DisplayExterno[13] ; DP_Clock   ; 4.794 ; 4.794 ; Rise       ; DP_Clock        ;
+; DP_DisplayInterno[*]   ; DP_Clock   ; 4.356 ; 4.356 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[0]  ; DP_Clock   ; 4.809 ; 4.809 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[1]  ; DP_Clock   ; 4.473 ; 4.473 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[2]  ; DP_Clock   ; 4.356 ; 4.356 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[3]  ; DP_Clock   ; 4.360 ; 4.360 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[4]  ; DP_Clock   ; 4.466 ; 4.466 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[5]  ; DP_Clock   ; 4.569 ; 4.569 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[6]  ; DP_Clock   ; 4.671 ; 4.671 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[7]  ; DP_Clock   ; 4.814 ; 4.814 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[8]  ; DP_Clock   ; 4.902 ; 4.902 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[9]  ; DP_Clock   ; 5.800 ; 5.800 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[10] ; DP_Clock   ; 4.801 ; 4.801 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[11] ; DP_Clock   ; 4.900 ; 4.900 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[12] ; DP_Clock   ; 5.812 ; 5.812 ; Rise       ; DP_Clock        ;
+;  DP_DisplayInterno[13] ; DP_Clock   ; 4.784 ; 4.784 ; Rise       ; DP_Clock        ;
+; DP_DisplayPeso[*]      ; DP_Clock   ; 3.930 ; 3.930 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[0]     ; DP_Clock   ; 4.088 ; 4.088 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[1]     ; DP_Clock   ; 4.132 ; 4.132 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[2]     ; DP_Clock   ; 4.268 ; 4.268 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[3]     ; DP_Clock   ; 4.172 ; 4.172 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[4]     ; DP_Clock   ; 4.179 ; 4.179 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[5]     ; DP_Clock   ; 4.220 ; 4.220 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[6]     ; DP_Clock   ; 4.077 ; 4.077 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[7]     ; DP_Clock   ; 4.571 ; 4.571 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[8]     ; DP_Clock   ; 4.577 ; 4.577 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[9]     ; DP_Clock   ; 4.607 ; 4.607 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[10]    ; DP_Clock   ; 4.445 ; 4.445 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[11]    ; DP_Clock   ; 4.588 ; 4.588 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[12]    ; DP_Clock   ; 4.580 ; 4.580 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[13]    ; DP_Clock   ; 4.043 ; 4.043 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[14]    ; DP_Clock   ; 4.912 ; 4.912 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[15]    ; DP_Clock   ; 4.913 ; 4.913 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[16]    ; DP_Clock   ; 4.928 ; 4.928 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[17]    ; DP_Clock   ; 4.812 ; 4.812 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[18]    ; DP_Clock   ; 4.829 ; 4.829 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[19]    ; DP_Clock   ; 4.799 ; 4.799 ; Rise       ; DP_Clock        ;
+;  DP_DisplayPeso[20]    ; DP_Clock   ; 3.930 ; 3.930 ; Rise       ; DP_Clock        ;
+; DP_FilaAndar_SigOUT    ; DP_Clock   ; 4.794 ; 4.794 ; Rise       ; DP_Clock        ;
+; DP_Sobrepeso_SigOUT    ; DP_Clock   ; 3.999 ; 3.999 ; Rise       ; DP_Clock        ;
+; DP_Temp_SigOUT         ; DP_Clock   ; 3.491 ; 3.491 ; Rise       ; DP_Clock        ;
++------------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; DP_Clock   ; DP_Clock ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; DP_Clock   ; DP_Clock ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 31    ; 31   ;
+; Unconstrained Input Port Paths  ; 1351  ; 1351 ;
+; Unconstrained Output Ports      ; 56    ; 56   ;
+; Unconstrained Output Port Paths ; 713   ; 713  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jun 26 10:29:59 2024
+Info: Command: quartus_sta Datapath -c Datapath
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 1 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Datapath.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name DP_Clock DP_Clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -135.981
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):  -135.981     -9361.467 DP_Clock 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 DP_Clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -187.380 DP_Clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -61.630
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -61.630     -4190.210 DP_Clock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 DP_Clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380      -187.380 DP_Clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4657 megabytes
+    Info: Processing ended: Wed Jun 26 10:30:03 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:02
+
+

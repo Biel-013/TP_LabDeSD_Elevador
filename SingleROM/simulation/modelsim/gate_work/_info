@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\SingleROM\simulation\modelsim
+Esinglerom
+Z1 w1718805384
+Z2 DPx4 ieee 16 vital_primitives 0 22 9W@YP9_VCb?_GCJ8e:;YQ0
+Z3 DPx9 cycloneii 19 cycloneii_atom_pack 0 22 zUjlM<IUJVWSWg:L2<>ic3
+Z4 DPx4 ieee 12 vital_timing 0 22 7h8zz2S4HVg:a;2TBMI[j1
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 DPx9 cycloneii 20 cycloneii_components 0 22 h@gSJ;Al32oYg[7^PbnAR0
+Z8 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\SingleROM\simulation\modelsim
+Z9 8SingleROM.vho
+Z10 FSingleROM.vho
+l0
+L34
+VN<7XP^X_BTK]fa0d;R2Nk2
+Z11 OV;C;10.1d;51
+31
+Z12 !s108 1718805395.072000
+Z13 !s90 -reportprogress|300|-93|-work|work|SingleROM.vho|
+Z14 !s107 SingleROM.vho|
+Z15 o-93 -work work -O0
+Z16 tExplicit 1
+!s100 [2nb@^Db@SF3`2Tni2QM70
+!i10b 1
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 9 singlerom 0 22 N<7XP^X_BTK]fa0d;R2Nk2
+l64
+L52
+Vn>ImNFS]ez?oaejFGRDb_3
+R11
+31
+R12
+R13
+R14
+R15
+R16
+!s100 C`:F<8j=kPRmn[YmE6Y6o3
+!i10b 1
+Etb_singlerom
+Z17 w1718805365
+Z18 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R5
+R6
+R8
+Z19 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd
+Z20 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd
+l0
+L5
+VQjgc1NO2azPGHCRgR>_0a3
+!s100 9W>X3m5M5ohKc3ll75if13
+R11
+31
+!i10b 1
+Z21 !s108 1718805395.232000
+Z22 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd|
+Z23 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/tb_SingleROM.vhd|
+R15
+R16
+Abehavior
+R18
+R5
+R6
+DEx4 work 12 tb_singlerom 0 22 Qjgc1NO2azPGHCRgR>_0a3
+l24
+L8
+VBR?Y7bFl@[zYSQ770UIoh1
+!s100 GARU_AzET9GMhANAc5[RT1
+R11
+31
+!i10b 1
+R21
+R22
+R23
+R15
+R16

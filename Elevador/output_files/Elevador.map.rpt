@@ -1,0 +1,1046 @@
+Analysis & Synthesis report for Elevador
+Thu Jul 04 13:23:45 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Elevador|Controladora:INST_Controladora|STATE
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: DivClock:INST_DivClock
+ 14. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Temporizador:INST_Temporizador
+ 15. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|SingleROM:INST_ROM_RefPeso
+ 16. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Registrador:INST_Reg_A_Atual
+ 17. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Registrador:INST_Reg_Peso
+ 18. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Fileira:INST_Fila_Andar
+ 19. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Comparador:INST_Comp_Andar
+ 20. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Comparador:INST_Comp_Peso
+ 21. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso
+ 22. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I
+ 23. Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E
+ 24. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0
+ 25. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0
+ 26. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod1
+ 27. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0
+ 28. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0
+ 29. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod1
+ 30. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod0
+ 31. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Div0
+ 32. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod1
+ 33. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1
+ 34. Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod0
+ 35. Port Connectivity Checks: "Datapath:INST_Datapath|Comparador:INST_Comp_Peso"
+ 36. Port Connectivity Checks: "Datapath:INST_Datapath|Comparador:INST_Comp_Andar"
+ 37. Port Connectivity Checks: "Datapath:INST_Datapath|Registrador:INST_Reg_Peso"
+ 38. Port Connectivity Checks: "Datapath:INST_Datapath"
+ 39. Port Connectivity Checks: "Controladora:INST_Controladora"
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jul 04 13:23:44 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; Elevador                                        ;
+; Top-level Entity Name              ; Elevador                                        ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 4,082                                           ;
+;     Total combinational functions  ; 4,021                                           ;
+;     Dedicated logic registers      ; 214                                             ;
+; Total registers                    ; 214                                             ;
+; Total pins                         ; 83                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; Elevador           ; Elevador           ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                        ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+; ../Temporizador/Temporizador.vhd ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd       ;         ;
+; ../SingleROM/SingleROM.vhd       ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd             ;         ;
+; ../Registrador/Registrador.vhd   ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Registrador/Registrador.vhd         ;         ;
+; ../Fileira/Fileira.vhd           ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Fileira/Fileira.vhd                 ;         ;
+; ../Emergencia/Emergencia.vhd     ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd           ;         ;
+; ../DivClock/DivClock.vhd         ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd               ;         ;
+; ../Datapath/Datapath.vhd         ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Datapath/Datapath.vhd               ;         ;
+; ../Controladora/Controladora.vhd ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd       ;         ;
+; ../Comparador/Comparador.vhd     ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Comparador/Comparador.vhd           ;         ;
+; ../BCD_7sWd/BCD_7sWd.vhd         ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/BCD_7sWd/BCD_7sWd.vhd               ;         ;
+; Elevador.vhd                     ; yes             ; User VHDL File               ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/Elevador.vhd               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; a:/program files/altera/quartus/libraries/megafunctions/lpm_divide.tdf                              ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; a:/program files/altera/quartus/libraries/megafunctions/abs_divider.inc                             ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; a:/program files/altera/quartus/libraries/megafunctions/sign_div_unsign.inc                         ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; a:/program files/altera/quartus/libraries/megafunctions/aglobal130.inc                              ;         ;
+; db/lpm_divide_a5m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/lpm_divide_a5m.tdf      ;         ;
+; db/sign_div_unsign_hkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/sign_div_unsign_hkh.tdf ;         ;
+; db/alt_u_div_40f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/alt_u_div_40f.tdf       ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/add_sub_lkc.tdf         ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/add_sub_mkc.tdf         ;         ;
+; db/lpm_divide_2dm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/lpm_divide_2dm.tdf      ;         ;
+; db/sign_div_unsign_ckh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/sign_div_unsign_ckh.tdf ;         ;
+; db/alt_u_div_qve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/alt_u_div_qve.tdf       ;         ;
+; db/lpm_divide_65m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/lpm_divide_65m.tdf      ;         ;
+; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/sign_div_unsign_dkh.tdf ;         ;
+; db/alt_u_div_sve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/alt_u_div_sve.tdf       ;         ;
+; db/lpm_divide_0dm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/lpm_divide_0dm.tdf      ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/sign_div_unsign_akh.tdf ;         ;
+; db/alt_u_div_mve.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/alt_u_div_mve.tdf       ;         ;
+; db/lpm_divide_qlo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/lpm_divide_qlo.tdf      ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/abs_divider_4dg.tdf     ;         ;
+; db/alt_u_div_k5f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/alt_u_div_k5f.tdf       ;         ;
+; db/lpm_abs_0s9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/db/lpm_abs_0s9.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 4,082     ;
+;                                             ;           ;
+; Total combinational functions               ; 4021      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 1338      ;
+;     -- 3 input functions                    ; 1221      ;
+;     -- <=2 input functions                  ; 1462      ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 2653      ;
+;     -- arithmetic mode                      ; 1368      ;
+;                                             ;           ;
+; Total registers                             ; 214       ;
+;     -- Dedicated logic registers            ; 214       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 83        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; ELV_Reset ;
+; Maximum fan-out                             ; 198       ;
+; Total fan-out                               ; 12653     ;
+; Average fan-out                             ; 2.93      ;
++---------------------------------------------+-----------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                   ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                         ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Elevador                                    ; 4021 (0)          ; 214 (0)      ; 0           ; 0            ; 0       ; 0         ; 83   ; 0            ; |Elevador                                                                                                                                                   ; work         ;
+;    |Controladora:INST_Controladora|          ; 46 (46)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Controladora:INST_Controladora                                                                                                                    ; work         ;
+;    |Datapath:INST_Datapath|                  ; 3926 (0)          ; 172 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath                                                                                                                            ; work         ;
+;       |Bcd_7sWd:INST_Display_E|              ; 68 (24)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E                                                                                                    ; work         ;
+;          |lpm_divide:Div0|                   ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Div0                                                                                    ; work         ;
+;             |lpm_divide_0dm:auto_generated|  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                          ; work         ;
+;                   |alt_u_div_mve:divider|    ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider    ; work         ;
+;          |lpm_divide:Mod0|                   ; 26 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod0                                                                                    ; work         ;
+;             |lpm_divide_65m:auto_generated|  ; 26 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod0|lpm_divide_65m:auto_generated                                                      ; work         ;
+;                |sign_div_unsign_dkh:divider| ; 26 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_dkh:divider                          ; work         ;
+;                   |alt_u_div_sve:divider|    ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_sve:divider    ; work         ;
+;       |Bcd_7sWd:INST_Display_I|              ; 70 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I                                                                                                    ; work         ;
+;          |lpm_divide:Div0|                   ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0                                                                                    ; work         ;
+;             |lpm_divide_0dm:auto_generated|  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0|lpm_divide_0dm:auto_generated                                                      ; work         ;
+;                |sign_div_unsign_akh:divider| ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider                          ; work         ;
+;                   |alt_u_div_mve:divider|    ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0|lpm_divide_0dm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mve:divider    ; work         ;
+;          |lpm_divide:Mod0|                   ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0                                                                                    ; work         ;
+;             |lpm_divide_65m:auto_generated|  ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0|lpm_divide_65m:auto_generated                                                      ; work         ;
+;                |sign_div_unsign_dkh:divider| ; 27 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_dkh:divider                          ; work         ;
+;                   |alt_u_div_sve:divider|    ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0|lpm_divide_65m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_sve:divider    ; work         ;
+;       |Bcd_7sWd:INST_Display_Peso|           ; 77 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso                                                                                                 ; work         ;
+;          |lpm_divide:Div0|                   ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0                                                                                 ; work         ;
+;             |lpm_divide_2dm:auto_generated|  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0|lpm_divide_2dm:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_ckh:divider| ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0|lpm_divide_2dm:auto_generated|sign_div_unsign_ckh:divider                       ; work         ;
+;                   |alt_u_div_qve:divider|    ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0|lpm_divide_2dm:auto_generated|sign_div_unsign_ckh:divider|alt_u_div_qve:divider ; work         ;
+;          |lpm_divide:Mod0|                   ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0                                                                                 ; work         ;
+;             |lpm_divide_a5m:auto_generated|  ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0|lpm_divide_a5m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_hkh:divider| ; 33 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0|lpm_divide_a5m:auto_generated|sign_div_unsign_hkh:divider                       ; work         ;
+;                   |alt_u_div_40f:divider|    ; 33 (33)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0|lpm_divide_a5m:auto_generated|sign_div_unsign_hkh:divider|alt_u_div_40f:divider ; work         ;
+;       |Comparador:INST_Comp_Andar|           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Comparador:INST_Comp_Andar                                                                                                 ; work         ;
+;       |Comparador:INST_Comp_Peso|            ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Comparador:INST_Comp_Peso                                                                                                  ; work         ;
+;       |Emergencia:INST_Emergencia|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Emergencia:INST_Emergencia                                                                                                 ; work         ;
+;       |Fileira:INST_Fila_Andar|              ; 3682 (345)        ; 146 (146)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar                                                                                                    ; work         ;
+;          |lpm_divide:Mod0|                   ; 1670 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod0                                                                                    ; work         ;
+;             |lpm_divide_qlo:auto_generated|  ; 1670 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod0|lpm_divide_qlo:auto_generated                                                      ; work         ;
+;                |abs_divider_4dg:divider|     ; 1670 (63)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider                              ; work         ;
+;                   |alt_u_div_k5f:divider|    ; 1566 (1566)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider        ; work         ;
+;                   |lpm_abs_0s9:my_abs_num|   ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod0|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_num       ; work         ;
+;          |lpm_divide:Mod1|                   ; 1667 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1                                                                                    ; work         ;
+;             |lpm_divide_qlo:auto_generated|  ; 1667 (0)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1|lpm_divide_qlo:auto_generated                                                      ; work         ;
+;                |abs_divider_4dg:divider|     ; 1667 (63)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider                              ; work         ;
+;                   |alt_u_div_k5f:divider|    ; 1566 (1566)       ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|alt_u_div_k5f:divider        ; work         ;
+;                   |lpm_abs_0s9:my_abs_num|   ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1|lpm_divide_qlo:auto_generated|abs_divider_4dg:divider|lpm_abs_0s9:my_abs_num       ; work         ;
+;       |Registrador:INST_Reg_A_Atual|         ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Registrador:INST_Reg_A_Atual                                                                                               ; work         ;
+;       |Registrador:INST_Reg_Peso|            ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Registrador:INST_Reg_Peso                                                                                                  ; work         ;
+;       |Temporizador:INST_Temporizador|       ; 20 (20)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|Datapath:INST_Datapath|Temporizador:INST_Temporizador                                                                                             ; work         ;
+;    |DivClock:INST_DivClock|                  ; 49 (49)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Elevador|DivClock:INST_DivClock                                                                                                                            ; work         ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------+
+; State Machine - |Elevador|Controladora:INST_Controladora|STATE                                              ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; Name     ; STATE.S8 ; STATE.S7 ; STATE.S6 ; STATE.S5 ; STATE.S4 ; STATE.S3 ; STATE.S2 ; STATE.S1 ; STATE.S0 ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+; STATE.S0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; STATE.S1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; STATE.S2 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; STATE.S3 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; STATE.S4 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; STATE.S5 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; STATE.S6 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; STATE.S7 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; STATE.S8 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                      ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                       ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+; Controladora:INST_Controladora|FSM_Emerg_SigOUT     ; Controladora:INST_Controladora|WideOr12   ; yes                    ;
+; Controladora:INST_Controladora|FSM_Motor_Porta      ; Controladora:INST_Controladora|Selector0  ; yes                    ;
+; Controladora:INST_Controladora|FSM_Motor_Subir      ; Controladora:INST_Controladora|Selector15 ; yes                    ;
+; Controladora:INST_Controladora|FSM_Motor_Descer     ; Controladora:INST_Controladora|Selector15 ; yes                    ;
+; Controladora:INST_Controladora|FSM_FilaAndar_Add    ; Controladora:INST_Controladora|Selector22 ; yes                    ;
+; Controladora:INST_Controladora|FSM_FilaAndar_Remove ; Controladora:INST_Controladora|Selector22 ; yes                    ;
+; Controladora:INST_Controladora|SIG_IN_emerg         ; Controladora:INST_Controladora|STATE.S8   ; yes                    ;
+; Controladora:INST_Controladora|FSM_Temp_Start       ; Controladora:INST_Controladora|Selector20 ; yes                    ;
+; Controladora:INST_Controladora|FSM_Temp_Reset       ; Controladora:INST_Controladora|Selector19 ; yes                    ;
+; Number of user-specified and inferred latches = 9   ;                                           ;                        ;
++-----------------------------------------------------+-------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                      ;
++----------------------------------------------------------------+----------------------------------------+
+; Register name                                                  ; Reason for Removal                     ;
++----------------------------------------------------------------+----------------------------------------+
+; Datapath:INST_Datapath|Registrador:INST_Reg_Peso|reg[5..8]     ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Registrador:INST_Reg_A_Atual|reg[5,6]   ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[0][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[0][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[1][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[1][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[2][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[2][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[3][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[3][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[4][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[4][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[5][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[5][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[6][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[6][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[7][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[7][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[8][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[8][5] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[9][6] ; Stuck at GND due to stuck port data_in ;
+; Datapath:INST_Datapath|Fileira:INST_Fila_Andar|fileira_v[9][5] ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 26                         ;                                        ;
++----------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 214   ;
+; Number of registers using Synchronous Clear  ; 15    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 214   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 158   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |Elevador|Datapath:INST_Datapath|Temporizador:INST_Temporizador|Contador[0] ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|count[20]          ;
+; 10:1               ; 5 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |Elevador|Datapath:INST_Datapath|Fileira:INST_Fila_Andar|Mux3               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Elevador|Controladora:INST_Controladora|Selector21                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: DivClock:INST_DivClock ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; divisao        ; 50000 ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Temporizador:INST_Temporizador ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; frequencia     ; 1000  ; Signed Integer                                                            ;
+; tempo          ; 10    ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|SingleROM:INST_ROM_RefPeso ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; w              ; 9     ; Signed Integer                                                        ;
+; value          ; 25    ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Registrador:INST_Reg_A_Atual ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; w              ; 7     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Registrador:INST_Reg_Peso ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; w              ; 9     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Fileira:INST_Fila_Andar ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; w              ; 7     ; Signed Integer                                                     ;
+; andares        ; 10    ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Comparador:INST_Comp_Andar ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; w              ; 7     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Comparador:INST_Comp_Peso ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; w              ; 9     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; w              ; 9     ; Signed Integer                                                        ;
+; digitos        ; 4     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; w              ; 7     ; Signed Integer                                                     ;
+; digitos        ; 2     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; w              ; 7     ; Signed Integer                                                     ;
+; digitos        ; 2     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                     ;
++------------------------+----------------+--------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                                                  ;
+; LPM_WIDTHD             ; 9              ; Untyped                                                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_a5m ; Untyped                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                           ;
++------------------------+----------------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                     ;
++------------------------+----------------+--------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                                                  ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_2dm ; Untyped                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                           ;
++------------------------+----------------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod1 ;
++------------------------+----------------+--------------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                     ;
++------------------------+----------------+--------------------------------------------------------------------------+
+; LPM_WIDTHN             ; 9              ; Untyped                                                                  ;
+; LPM_WIDTHD             ; 9              ; Untyped                                                                  ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                                  ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                                  ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                                  ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                                  ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                                  ;
+; CBXI_PARAMETER         ; lpm_divide_a5m ; Untyped                                                                  ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                                  ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                                  ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                             ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                           ;
++------------------------+----------------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                               ;
+; LPM_WIDTHD             ; 7              ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_65m ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                               ;
+; LPM_WIDTHD             ; 7              ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_65m ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                               ;
+; LPM_WIDTHD             ; 7              ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_65m ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                               ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_0dm ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                                                               ;
+; LPM_WIDTHD             ; 7              ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_65m ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                               ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_qlo ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                                  ;
++------------------------+----------------+-----------------------------------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                                               ;
+; LPM_WIDTHD             ; 32             ; Untyped                                                               ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                                               ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                                               ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                               ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                                               ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                               ;
+; CBXI_PARAMETER         ; lpm_divide_qlo ; Untyped                                                               ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                               ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                               ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                          ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                        ;
++------------------------+----------------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:INST_Datapath|Comparador:INST_Comp_Peso"                                         ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; comp_maior ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; comp_menor ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; comp_igual ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:INST_Datapath|Comparador:INST_Comp_Andar"                                         ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; comp_sigout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:INST_Datapath|Registrador:INST_Reg_Peso" ;
++------------+-------+----------+----------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                      ;
++------------+-------+----------+----------------------------------------------+
+; reg_enable ; Input ; Info     ; Stuck at VCC                                 ;
++------------+-------+----------+----------------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "Datapath:INST_Datapath"      ;
++-----------------------+-------+----------+--------------+
+; Port                  ; Type  ; Severity ; Details      ;
++-----------------------+-------+----------+--------------+
+; dp_sensorpeso[8..5]   ; Input ; Info     ; Stuck at GND ;
+; dp_sensorandar[6..5]  ; Input ; Info     ; Stuck at GND ;
+; dp_tecladoandar[6..5] ; Input ; Info     ; Stuck at GND ;
+; dp_regandar_load      ; Input ; Info     ; Stuck at VCC ;
++-----------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Controladora:INST_Controladora"                                                                  ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                             ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+; fsm_regandar_load ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Jul 04 13:23:35 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Elevador -c Elevador
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/temporizador/temporizador.vhd
+    Info (12022): Found design unit 1: Temporizador-arch
+    Info (12023): Found entity 1: Temporizador
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/singlerom/singlerom.vhd
+    Info (12022): Found design unit 1: SingleROM-arch
+    Info (12023): Found entity 1: SingleROM
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/registrador/registrador.vhd
+    Info (12022): Found design unit 1: Registrador-arch
+    Info (12023): Found entity 1: Registrador
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/fileira/fileira.vhd
+    Info (12022): Found design unit 1: Fileira-Behavioral
+    Info (12023): Found entity 1: Fileira
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/emergencia/emergencia.vhd
+    Info (12022): Found design unit 1: Emergencia-arch
+    Info (12023): Found entity 1: Emergencia
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/divclock/divclock.vhd
+    Info (12022): Found design unit 1: DivClock-Behavioral
+    Info (12023): Found entity 1: DivClock
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/datapath/datapath.vhd
+    Info (12022): Found design unit 1: Datapath-arch
+    Info (12023): Found entity 1: Datapath
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/controladora/controladora.vhd
+    Info (12022): Found design unit 1: Controladora-arch
+    Info (12023): Found entity 1: Controladora
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/comparador/comparador.vhd
+    Info (12022): Found design unit 1: Comparador-arch
+    Info (12023): Found entity 1: Comparador
+Info (12021): Found 2 design units, including 1 entities, in source file /users/administrador/documents/ufmg/5_periodo/lsd/tp_elevador/bcd_7swd/bcd_7swd.vhd
+    Info (12022): Found design unit 1: Bcd_7sWd-arch
+    Info (12023): Found entity 1: Bcd_7sWd
+Info (12021): Found 2 design units, including 1 entities, in source file elevador.vhd
+    Info (12022): Found design unit 1: Elevador-arch
+    Info (12023): Found entity 1: Elevador
+Info (12021): Found 2 design units, including 1 entities, in source file tb_elevador.vhd
+    Info (12022): Found design unit 1: tb_Elevador-arch
+    Info (12023): Found entity 1: tb_Elevador
+Info (12127): Elaborating entity "Elevador" for the top level hierarchy
+Info (12128): Elaborating entity "DivClock" for hierarchy "DivClock:INST_DivClock"
+Info (12128): Elaborating entity "Controladora" for hierarchy "Controladora:INST_Controladora"
+Warning (10492): VHDL Process Statement warning at Controladora.vhd(180): signal "SIG_IN_emerg" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_RegAndar_Load", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_FilaAndar_Add", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_FilaAndar_Remove", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_Temp_Start", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_Temp_Reset", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_Emerg_SigOUT", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_Motor_Subir", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_Motor_Descer", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "FSM_Motor_Porta", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at Controladora.vhd(51): inferring latch(es) for signal or variable "SIG_IN_emerg", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "SIG_IN_emerg" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_Motor_Porta" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_Motor_Descer" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_Motor_Subir" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_Emerg_SigOUT" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_Temp_Reset" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_Temp_Start" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_FilaAndar_Remove" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_FilaAndar_Add" at Controladora.vhd(51)
+Info (10041): Inferred latch for "FSM_RegAndar_Load" at Controladora.vhd(51)
+Info (12128): Elaborating entity "Datapath" for hierarchy "Datapath:INST_Datapath"
+Info (12128): Elaborating entity "Temporizador" for hierarchy "Datapath:INST_Datapath|Temporizador:INST_Temporizador"
+Info (12128): Elaborating entity "SingleROM" for hierarchy "Datapath:INST_Datapath|SingleROM:INST_ROM_RefPeso"
+Info (12128): Elaborating entity "Registrador" for hierarchy "Datapath:INST_Datapath|Registrador:INST_Reg_A_Atual"
+Info (12128): Elaborating entity "Registrador" for hierarchy "Datapath:INST_Datapath|Registrador:INST_Reg_Peso"
+Info (12128): Elaborating entity "Fileira" for hierarchy "Datapath:INST_Datapath|Fileira:INST_Fila_Andar"
+Warning (10540): VHDL Signal Declaration warning at Fileira.vhd(28): used explicit default value for signal "zeros_vector" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at Fileira.vhd(70): signal "zeros_vector" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "Emergencia" for hierarchy "Datapath:INST_Datapath|Emergencia:INST_Emergencia"
+Info (12128): Elaborating entity "Comparador" for hierarchy "Datapath:INST_Datapath|Comparador:INST_Comp_Andar"
+Info (12128): Elaborating entity "Comparador" for hierarchy "Datapath:INST_Datapath|Comparador:INST_Comp_Peso"
+Info (12128): Elaborating entity "Bcd_7sWd" for hierarchy "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso"
+Warning (10492): VHDL Process Statement warning at BCD_7sWd.vhd(39): signal "parse_saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at BCD_7sWd.vhd(67): signal "parse_saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "Bcd_7sWd" for hierarchy "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I"
+Warning (10492): VHDL Process Statement warning at BCD_7sWd.vhd(39): signal "parse_saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at BCD_7sWd.vhd(67): signal "parse_saida" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (278001): Inferred 11 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_E|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Fileira:INST_Fila_Andar|Mod1"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Datapath:INST_Datapath|Fileira:INST_Fila_Andar|Mod0"
+Info (12130): Elaborated megafunction instantiation "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_a5m.tdf
+    Info (12023): Found entity 1: lpm_divide_a5m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_hkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_hkh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_40f.tdf
+    Info (12023): Found entity 1: alt_u_div_40f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Info (12130): Elaborated megafunction instantiation "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_2dm.tdf
+    Info (12023): Found entity 1: lpm_divide_2dm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_ckh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_ckh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qve.tdf
+    Info (12023): Found entity 1: alt_u_div_qve
+Info (12130): Elaborated megafunction instantiation "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_Peso|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "9"
+    Info (12134): Parameter "LPM_WIDTHD" = "9"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_65m.tdf
+    Info (12023): Found entity 1: lpm_divide_65m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_dkh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_sve.tdf
+    Info (12023): Found entity 1: alt_u_div_sve
+Info (12130): Elaborated megafunction instantiation "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_0dm.tdf
+    Info (12023): Found entity 1: lpm_divide_0dm
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_mve.tdf
+    Info (12023): Found entity 1: alt_u_div_mve
+Info (12130): Elaborated megafunction instantiation "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "Datapath:INST_Datapath|Bcd_7sWd:INST_Display_I|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "7"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1"
+Info (12133): Instantiated megafunction "Datapath:INST_Datapath|Fileira:INST_Fila_Andar|lpm_divide:Mod1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qlo.tdf
+    Info (12023): Found entity 1: lpm_divide_qlo
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_k5f.tdf
+    Info (12023): Found entity 1: alt_u_div_k5f
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_0s9.tdf
+    Info (12023): Found entity 1: lpm_abs_0s9
+Info (13014): Ignored 62 buffer(s)
+    Info (13016): Ignored 62 CARRY_SUM buffer(s)
+Warning (13012): Latch Controladora:INST_Controladora|FSM_Emerg_SigOUT has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S8
+Warning (13012): Latch Controladora:INST_Controladora|FSM_Motor_Porta has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S2
+Warning (13012): Latch Controladora:INST_Controladora|FSM_Motor_Subir has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S7
+Warning (13012): Latch Controladora:INST_Controladora|FSM_Motor_Descer has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S8
+Warning (13012): Latch Controladora:INST_Controladora|FSM_FilaAndar_Add has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S5
+Warning (13012): Latch Controladora:INST_Controladora|FSM_FilaAndar_Remove has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S5
+Warning (13012): Latch Controladora:INST_Controladora|FSM_Temp_Start has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S3
+Warning (13012): Latch Controladora:INST_Controladora|FSM_Temp_Reset has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Controladora:INST_Controladora|STATE.S0
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 4165 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 61 output pins
+    Info (21061): Implemented 4082 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 34 warnings
+    Info: Peak virtual memory: 4679 megabytes
+    Info: Processing ended: Thu Jul 04 13:23:45 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:05
+
+

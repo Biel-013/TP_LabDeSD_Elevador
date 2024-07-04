@@ -1,0 +1,43 @@
+|Registrador
+REG_Clock => reg[0].CLK
+REG_Clock => reg[1].CLK
+REG_Clock => reg[2].CLK
+REG_Clock => reg[3].CLK
+REG_Clock => reg[4].CLK
+REG_Clock => reg[5].CLK
+REG_Clock => reg[6].CLK
+REG_Clock => reg[7].CLK
+REG_Reset => reg[0].ACLR
+REG_Reset => reg[1].ACLR
+REG_Reset => reg[2].ACLR
+REG_Reset => reg[3].ACLR
+REG_Reset => reg[4].ACLR
+REG_Reset => reg[5].ACLR
+REG_Reset => reg[6].ACLR
+REG_Reset => reg[7].ACLR
+REG_Enable => reg[7].ENA
+REG_Enable => reg[6].ENA
+REG_Enable => reg[5].ENA
+REG_Enable => reg[4].ENA
+REG_Enable => reg[3].ENA
+REG_Enable => reg[2].ENA
+REG_Enable => reg[1].ENA
+REG_Enable => reg[0].ENA
+REG_DataIN[0] => reg[0].DATAIN
+REG_DataIN[1] => reg[1].DATAIN
+REG_DataIN[2] => reg[2].DATAIN
+REG_DataIN[3] => reg[3].DATAIN
+REG_DataIN[4] => reg[4].DATAIN
+REG_DataIN[5] => reg[5].DATAIN
+REG_DataIN[6] => reg[6].DATAIN
+REG_DataIN[7] => reg[7].DATAIN
+REG_DataOUT[0] <= reg[0].DB_MAX_OUTPUT_PORT_TYPE
+REG_DataOUT[1] <= reg[1].DB_MAX_OUTPUT_PORT_TYPE
+REG_DataOUT[2] <= reg[2].DB_MAX_OUTPUT_PORT_TYPE
+REG_DataOUT[3] <= reg[3].DB_MAX_OUTPUT_PORT_TYPE
+REG_DataOUT[4] <= reg[4].DB_MAX_OUTPUT_PORT_TYPE
+REG_DataOUT[5] <= reg[5].DB_MAX_OUTPUT_PORT_TYPE
+REG_DataOUT[6] <= reg[6].DB_MAX_OUTPUT_PORT_TYPE
+REG_DataOUT[7] <= reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

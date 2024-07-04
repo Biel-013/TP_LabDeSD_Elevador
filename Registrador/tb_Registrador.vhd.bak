@@ -1,0 +1,83 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity tb_Registrador is
+end tb_Registrador;
+
+architecture behavioral of tb_Registrador is
+    constant W : integer := 8; -- define a largura do registrador
+    signal REG_Clock   : std_logic := '0';
+    signal REG_Reset   : std_logic := '0';
+    signal REG_Enable  : std_logic := '0';
+    signal REG_Data_IN : std_logic_vector(W-1 downto 0) := (others => '0');
+    signal REG_Data_OUT: std_logic_vector(W-1 downto 0);
+
+    -- instância do Registrador
+    component Registrador
+        generic (W : integer := 8);
+        port (
+            REG_Clock   : in  std_logic;
+            REG_Reset   : in  std_logic;
+            REG_Enable  : in  std_logic;
+            REG_Data_IN : in  std_logic_vector(W-1 downto 0);
+            REG_Data_OUT: out std_logic_vector(W-1 downto 0)
+        );
+    end component;
+
+begin
+    uut: Registrador
+        generic map (W => W)
+        port map (
+            REG_Clock   => REG_Clock,
+            REG_Reset   => REG_Reset,
+            REG_Enable  => REG_Enable,
+            REG_Data_IN => REG_Data_IN,
+            REG_Data_OUT=> REG_Data_OUT
+        );
+
+    -- processo de clock
+    clk_process :process
+    begin
+        while true loop
+            REG_Clock <= '0';
+            wait for 10 ns;
+            REG_Clock <= '1';
+            wait for 10 ns;
+        end loop;
+    end process;
+
+    -- processo de estímulo
+    stim_proc: process
+    begin
+        -- resetar o registrador
+        REG_Reset <= '1';
+        wait for 20 ns;
+        REG_Reset <= '0';
+
+        -- habilitar e escrever dados
+        REG_Enable <= '1';
+        REG_Data_IN <= "10101010";
+        wait for 20 ns;
+
+        -- alterar entrada de dados, mas sem habilitar
+        REG_Enable <= '0';
+        REG_Data_IN <= "01010101";
+        wait for 20 ns;
+
+        -- habilitar e escrever novos dados
+        REG_Enable <= '1';
+        REG_Data_IN <= "11110000";
+        wait for 20 ns;
+
+        -- desabilitar e alterar entrada de dados
+        REG_Enable <= '0';
+        REG_Data_IN <= "00001111";
+        wait for 20 ns;
+
+        -- fim do teste
+        wait;
+    end process;
+
+end behavioral;

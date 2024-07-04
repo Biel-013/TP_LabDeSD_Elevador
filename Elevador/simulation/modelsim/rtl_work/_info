@@ -1,0 +1,451 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Elevador\simulation\modelsim
+Ebcd_7swd
+Z1 w1719160271
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Administrador\Documents\UFMG\5_Periodo\LSD\TP_Elevador\Elevador\simulation\modelsim
+Z6 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/BCD_7sWd/BCD_7sWd.vhd
+Z7 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/BCD_7sWd/BCD_7sWd.vhd
+l0
+L6
+VzhK^ed7DzT:S[Z0Z2keGU1
+Z8 OV;C;10.1d;51
+31
+Z9 !s108 1719614107.658000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/BCD_7sWd/BCD_7sWd.vhd|
+Z11 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/BCD_7sWd/BCD_7sWd.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 dIF9DZZ^Lj>5@G<VA4dXF2
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 8 bcd_7swd 0 22 zhK^ed7DzT:S[Z0Z2keGU1
+l19
+L17
+VmU_Sl^h55@FClZn^aJ`i]3
+R8
+31
+R9
+R10
+R11
+R12
+R13
+!s100 9<0]?fG]>H[0h0C7f5aPf1
+!i10b 1
+Ecomparador
+Z14 w1718840624
+R2
+R3
+R4
+R5
+Z15 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Comparador/Comparador.vhd
+Z16 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Comparador/Comparador.vhd
+l0
+L6
+VV3IcD>A<_gdN@MjHh<G1A2
+R8
+31
+Z17 !s108 1719614107.574000
+Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Comparador/Comparador.vhd|
+Z19 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Comparador/Comparador.vhd|
+R12
+R13
+!s100 @eee6SSMB;hJnbYH@lnkP3
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 10 comparador 0 22 V3IcD>A<_gdN@MjHh<G1A2
+l22
+L21
+VHlMjK0moS4dV@JYXV>IcW3
+R8
+31
+R17
+R18
+R19
+R12
+R13
+!s100 U1C6:g`]z?j0BT203Ro1z1
+!i10b 1
+Econtroladora
+Z20 w1719414368
+R2
+R3
+R4
+R5
+Z21 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd
+Z22 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd
+l0
+L5
+V2WC88@8J9ggPOlnSdLk][2
+R8
+31
+Z23 !s108 1719614107.488000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd|
+Z25 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Controladora/Controladora.vhd|
+R12
+R13
+!s100 @:oc^nJ]OVGd>7=c;gN;T1
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 12 controladora 0 22 2WC88@8J9ggPOlnSdLk][2
+l38
+L33
+VTXnRdEFFzzY[E5URC_Fo>2
+R8
+31
+R23
+R24
+R25
+R12
+R13
+!s100 Hla:d=5eY9?SWaQWAgcYl2
+!i10b 1
+Edatapath
+Z26 w1719487881
+R2
+R3
+R4
+R5
+Z27 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Datapath/Datapath.vhd
+Z28 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Datapath/Datapath.vhd
+l0
+L5
+VCkh6>B:=;N>LMkzLWR2cC1
+R8
+31
+Z29 !s108 1719614107.389000
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Datapath/Datapath.vhd|
+Z31 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Datapath/Datapath.vhd|
+R12
+R13
+!s100 ng7fm1SZ3X_X?ZeKCjHTH1
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 8 datapath 0 22 Ckh6>B:=;N>LMkzLWR2cC1
+l121
+L32
+V=llkEHO<gMeB9D4]1a]_j0
+R8
+31
+R29
+R30
+R31
+R12
+R13
+!s100 DNLWh9^aV1Qz`aLb[TFQN3
+!i10b 1
+Edivclock
+Z32 w1719413165
+R3
+R4
+R5
+Z33 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd
+Z34 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd
+l0
+L4
+Viz;:EQV_L2Ee^aH^iO?d^2
+R8
+31
+Z35 !s108 1719614107.310000
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd|
+Z37 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/DivClock/DivClock.vhd|
+R12
+R13
+!s100 VP@U:5]OXG>dAN2c:h:H20
+!i10b 1
+Abehavioral
+R3
+R4
+DEx4 work 8 divclock 0 22 iz;:EQV_L2Ee^aH^iO?d^2
+l17
+L13
+VXo34bD7bK^QYl?JhT9J9D3
+R8
+31
+R35
+R36
+R37
+R12
+R13
+!s100 DoXE[=bi[NFEHZOmb9PV01
+!i10b 1
+Eelevador
+Z38 w1719487846
+R2
+R3
+R4
+R5
+Z39 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/Elevador.vhd
+Z40 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/Elevador.vhd
+l0
+L5
+VBUS4fMkhBXFB`PL:XBQP_1
+R8
+31
+Z41 !s108 1719614107.748000
+Z42 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/Elevador.vhd|
+Z43 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/Elevador.vhd|
+R12
+R13
+!s100 j[8B8=Ubf<5iP0HXTUbA31
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 8 elevador 0 22 BUS4fMkhBXFB`PL:XBQP_1
+l109
+L28
+Vh6XGk5mkjbhcf38ejAi2J0
+R8
+31
+R41
+R42
+R43
+R12
+R13
+!s100 Q3hKkQH;2QbZ<J901V@fz0
+!i10b 1
+Eemergencia
+Z44 w1718840115
+R3
+R4
+R5
+Z45 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd
+Z46 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd
+l0
+L5
+VULaVYUb4;Fj?QhGLUcjYz2
+R8
+31
+Z47 !s108 1719614107.226000
+Z48 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd|
+Z49 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Emergencia/Emergencia.vhd|
+R12
+R13
+!s100 Rf86L6[IjgV?@2YR;j<nn1
+!i10b 1
+Aarch
+R3
+R4
+DEx4 work 10 emergencia 0 22 ULaVYUb4;Fj?QhGLUcjYz2
+l16
+L14
+VD6S49kSXih?AmR77fB1JT1
+R8
+31
+R47
+R48
+R49
+R12
+R13
+!s100 gNbBGifi6YE;NC0Dmk6Qf0
+!i10b 1
+Efileira
+Z50 w1719037407
+Z51 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z52 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+R3
+R4
+R5
+Z53 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Fileira/Fileira.vhd
+Z54 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Fileira/Fileira.vhd
+l0
+L6
+V67UGWebDdRo8IS8bTR;3J3
+R8
+31
+Z55 !s108 1719614107.136000
+Z56 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Fileira/Fileira.vhd|
+Z57 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Fileira/Fileira.vhd|
+R12
+R13
+!s100 OfOlS^agYz2W35Yz=iTXk2
+!i10b 1
+Abehavioral
+R51
+R52
+R3
+R4
+DEx4 work 7 fileira 0 22 67UGWebDdRo8IS8bTR;3J3
+l29
+L22
+V@hXXEJ;ciamAjUOMGOG1H0
+R8
+31
+R55
+R56
+R57
+R12
+R13
+!s100 2Q>1;Hc9>P>]5jQ4DINUD0
+!i10b 1
+Eregistrador
+Z58 w1718840832
+R51
+R52
+R3
+R4
+R5
+Z59 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Registrador/Registrador.vhd
+Z60 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Registrador/Registrador.vhd
+l0
+L7
+V_OgVLAhi@=IHNaPC]30B60
+R8
+31
+Z61 !s108 1719614107.052000
+Z62 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Registrador/Registrador.vhd|
+Z63 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Registrador/Registrador.vhd|
+R12
+R13
+!s100 37cOmQin;H317gGTz;f:P0
+!i10b 1
+Aarch
+R51
+R52
+R3
+R4
+DEx4 work 11 registrador 0 22 _OgVLAhi@=IHNaPC]30B60
+l24
+L21
+V=::JWVz4;O=[D=<N6EhbA1
+R8
+31
+R61
+R62
+R63
+R12
+R13
+!s100 0FfX6VIThbih731>gA2LW0
+!i10b 1
+Esinglerom
+Z64 w1718840403
+R2
+R3
+R4
+R5
+Z65 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd
+Z66 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd
+l0
+L6
+V^X1^6nXch4<T56@`BTPSD3
+R8
+31
+Z67 !s108 1719614106.956000
+Z68 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd|
+Z69 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/SingleROM/SingleROM.vhd|
+R12
+R13
+!s100 hRFmI_DgknYPkdB?kmRYN2
+!i10b 1
+Aarch
+R2
+R3
+R4
+DEx4 work 9 singlerom 0 22 ^X1^6nXch4<T56@`BTPSD3
+l18
+L17
+VBlQF?E2dbH60aYN@R_e`21
+R8
+31
+R67
+R68
+R69
+R12
+R13
+!s100 7EW<mEjA?N1Ozf[L21UPG1
+!i10b 1
+Etb_elevador
+Z70 w1719487138
+R2
+R3
+R4
+R5
+Z71 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/tb_Elevador.vhd
+Z72 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/tb_Elevador.vhd
+l0
+L5
+VYMcm;gLcb>QYHU3mGG:`?0
+!s100 djj2XO1Qm2k2_mQUo[@ma0
+R8
+31
+!i10b 1
+Z73 !s108 1719614107.833000
+Z74 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/tb_Elevador.vhd|
+Z75 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Elevador/tb_Elevador.vhd|
+R12
+R13
+Aarch
+R2
+R3
+R4
+DEx4 work 11 tb_elevador 0 22 YMcm;gLcb>QYHU3mGG:`?0
+l51
+L8
+VL=_V;VGcTHgbUBB_2XJ`=3
+!s100 3SkHb=aB>8zM9KD?36[HN2
+R8
+31
+!i10b 1
+R73
+R74
+R75
+R12
+R13
+Etemporizador
+Z76 w1719231520
+R52
+R51
+R3
+R4
+R5
+Z77 8C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd
+Z78 FC:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd
+l0
+L5
+V;j[dJ]gRX_@@>XeI9a^7J0
+R8
+31
+Z79 !s108 1719614106.826000
+Z80 !s90 -reportprogress|300|-93|-work|work|C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd|
+Z81 !s107 C:/Users/Administrador/Documents/UFMG/5_Periodo/LSD/TP_Elevador/Temporizador/Temporizador.vhd|
+R12
+R13
+!s100 <7V^49lCo;_l6e:eQX6Pg3
+!i10b 1
+Aarch
+R52
+R51
+R3
+R4
+DEx4 work 12 temporizador 0 22 ;j[dJ]gRX_@@>XeI9a^7J0
+l21
+L18
+V>hVXU0Tz5_RgaTO?VH5R33
+R8
+31
+R79
+R80
+R81
+R12
+R13
+!s100 J^]a>NkIRLHDX`6Q2inmb1
+!i10b 1

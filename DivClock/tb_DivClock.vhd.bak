@@ -1,0 +1,48 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tb_DivClock is
+end tb_DivClock;
+
+architecture Behavioral of tb_DivClock is
+    signal clk_in  : STD_LOGIC := '0';
+    signal reset   : STD_LOGIC := '0';
+    signal clk_out : STD_LOGIC;
+
+    -- Clock period definition
+    constant CLK_PERIOD : time := 10 ns;
+
+begin
+    -- Instantiate the Unit Under Test (UUT)
+    uut: DivClock
+        port map (
+            clk_in  => clk_in,
+            reset   => reset,
+            clk_out => clk_out
+        );
+
+    -- Clock generation process
+    clk_process :process
+    begin
+        clk_in <= '0';
+        wait for CLK_PERIOD/2;
+        clk_in <= '1';
+        wait for CLK_PERIOD/2;
+    end process;
+
+    -- Stimulus process
+    stim_proc: process
+    begin
+        -- Hold reset state for 20 ns
+        reset <= '1';
+        wait for 20 ns;
+        reset <= '0';
+        
+        -- Insert more stimulus here if necessary
+        wait for 200 ns;
+
+        -- Stop the simulation
+        wait;
+    end process;
+
+end Behavioral;

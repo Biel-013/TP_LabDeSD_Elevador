@@ -1,0 +1,45 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity tb_SingleROM is
+end tb_SingleROM;
+
+architecture behavior of tb_SingleROM is
+
+    -- Component Declaration for the Unit Under Test (UUT)
+    component SingleROM
+        generic (
+            w : integer := 9;  -- Largura da saída
+            value : std_logic_vector(w-1 downto 0) := (others => '0')  -- Valor armazenado
+        );
+        port (
+            SROM_DataOUT : out std_logic_vector(w-1 downto 0)  -- Dados de saída
+        );
+    end component;
+
+    -- Signals
+    signal SROM_DataOUT : std_logic_vector(8 downto 0);  -- Largura de 9 bits
+
+begin
+
+    -- Instantiate the Unit Under Test (UUT)
+    uut: SingleROM
+        generic map (
+            w => 9,
+            value => "101010101"  -- Valor de exemplo
+        )
+        port map (
+            SROM_DataOUT => SROM_DataOUT
+        );
+
+    -- Stimulus process
+    stim_proc: process
+    begin	
+        -- Wait for some time and observe the output
+        wait for 100 ns;
+
+        -- Finish the simulation
+        wait;
+    end process;
+
+end behavior;

@@ -1,0 +1,23 @@
+|Comparador
+COMP_A[0] => LessThan0.IN4
+COMP_A[0] => LessThan1.IN4
+COMP_A[1] => LessThan0.IN3
+COMP_A[1] => LessThan1.IN3
+COMP_A[2] => LessThan0.IN2
+COMP_A[2] => LessThan1.IN2
+COMP_A[3] => LessThan0.IN1
+COMP_A[3] => LessThan1.IN1
+COMP_B[0] => LessThan0.IN8
+COMP_B[0] => LessThan1.IN8
+COMP_B[1] => LessThan0.IN7
+COMP_B[1] => LessThan1.IN7
+COMP_B[2] => LessThan0.IN6
+COMP_B[2] => LessThan1.IN6
+COMP_B[3] => LessThan0.IN5
+COMP_B[3] => LessThan1.IN5
+COMP_Maior <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+COMP_Menor <= COMP_Menor.DB_MAX_OUTPUT_PORT_TYPE
+COMP_Igual <= COMP_Igual.DB_MAX_OUTPUT_PORT_TYPE
+COMP_SigOUT <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
